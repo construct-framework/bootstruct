@@ -410,8 +410,8 @@ $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
 $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-icon');
 
 // Style sheets
-$doc->addStyleSheet($template . '/css/screen.css', 'text/css', 'screen');
 $doc->addStyleSheet($template . '/css/bootstrap.min.css', 'text/css', 'screen');
+$doc->addStyleSheet($template . '/css/screen.css', 'text/css', 'screen');
 $doc->addStyleSheet($template . '/css/print.css', 'text/css', 'print');
 if ($gridSystem != '-1') {
 	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem, 'text/css', 'screen');
