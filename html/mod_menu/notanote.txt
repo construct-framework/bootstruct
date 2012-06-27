@@ -1,0 +1,44 @@
+English
+
+These three files must be in
+template --> html -> mod_menu -> default.php together (without overwrite, or delete default.php)
+
+then in the title of menu item en joomla 2.5, write double bar as separator (windows -->ctrl+alt+1)
+title||subtitle
+
+
+result:
+<a href="#"><span class="title">title</span><span class="sub">subtitle</span></a>
+
+example css (basic):
+
+a span {display: block; text-align: center;}
+span.sub {font-size: 10px; margin-top:-10px; color: gray;}
+
+regards from Southern Cone
+Kinski
+
+
+Spanish
+
+estos tres archivos van en 
+plantilla--> html --> mod_menu --> juntos con default.php (sin sobreescribir, ni borrar default.php)
+
+luego, en el titulo del item de menu , escribir:
+titulo||subtitulo
+
+(doble barra como separador. windows -->ctrl+alt+1)
+
+resultado:
+<a href="#"><span class="titulo">title</span><span class="sub">subtitulo</span></a>
+
+css (basico):
+
+a span {display:block; text-align: center;}
+span.sub {font-size: 12px; margin-top: -10px; color: grey;}
+
+
+
+Saludos desde el Cono sur
+Tubo (kinski)
+Malvinas are Argentine
