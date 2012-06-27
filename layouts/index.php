@@ -258,7 +258,7 @@
 		<div class="gutter">
 
 			<?php if ($contentAboveCount) : ?>
-			<div id="content-above" class="clearfix">
+			<div id="content-above" class="clearfix row-fluid">
 				<?php if ($this->countModules('content-above-1')) : ?>
 				<div id="content-above-1" class="<?php echo $contentAboveClass ?>">
 					<jdoc:include type="modules" name="content-above-1" style="div" module-class="gutter" />

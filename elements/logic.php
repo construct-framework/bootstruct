@@ -104,6 +104,7 @@ $overrideTheme = str_replace(".css", "", $customStyleSheet);
 #----------------------------- Moldule Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
 
+$headerAboveCount  = NULL;
 $headerAboveCount1 = (int)($this->countModules('header-above-1') > 0);
 $headerAboveCount2 = (int)($this->countModules('header-above-2') > 0);
 $headerAboveCount3 = (int)($this->countModules('header-above-3') > 0);
@@ -111,12 +112,11 @@ $headerAboveCount4 = (int)($this->countModules('header-above-4') > 0);
 $headerAboveCount5 = (int)($this->countModules('header-above-5') > 0);
 $headerAboveCount6 = (int)($this->countModules('header-above-6') > 0);
 
-$headerAboveCount = $headerAboveCount1 + $headerAboveCount2 + $headerAboveCount3 + $headerAboveCount4 + $headerAboveCount5 + $headerAboveCount6;
-
-if ($headerAboveCount) : $headerAboveClass = 'count-' . $headerAboveCount; endif;
+if ($headerAboveCount) : $headerAboveClass = 'count-' . 12 / ($headerAboveCount1 + $headerAboveCount2 + $headerAboveCount3 + $headerAboveCount4 + $headerAboveCount5 + $headerAboveCount6); endif;
 
 #--------------------------------------------------------------------------#
 
+$headerBelowCount  = NULL;
 $headerBelowCount1 = (int)($this->countModules('header-below-1') > 0);
 $headerBelowCount2 = (int)($this->countModules('header-below-2') > 0);
 $headerBelowCount3 = (int)($this->countModules('header-below-3') > 0);
@@ -124,12 +124,11 @@ $headerBelowCount4 = (int)($this->countModules('header-below-4') > 0);
 $headerBelowCount5 = (int)($this->countModules('header-below-5') > 0);
 $headerBelowCount6 = (int)($this->countModules('header-below-6') > 0);
 
-$headerBelowCount = $headerBelowCount1 + $headerBelowCount2 + $headerBelowCount3 + $headerBelowCount4 + $headerBelowCount5 + $headerBelowCount6;
-
-if ($headerBelowCount) : $headerBelowClass = 'count-' . $headerBelowCount; endif;
+if ($headerBelowCount) : $headerBelowClass = 'count-' . 12 / ($headerBelowCount1 + $headerBelowCount2 + $headerBelowCount3 + $headerBelowCount4 + $headerBelowCount5 + $headerBelowCount6); endif;
 
 #--------------------------------------------------------------------------#
 
+$navBelowCount  = NULL;
 $navBelowCount1 = (int)($this->countModules('nav-below-1') > 0);
 $navBelowCount2 = (int)($this->countModules('nav-below-2') > 0);
 $navBelowCount3 = (int)($this->countModules('nav-below-3') > 0);
@@ -137,12 +136,11 @@ $navBelowCount4 = (int)($this->countModules('nav-below-4') > 0);
 $navBelowCount5 = (int)($this->countModules('nav-below-5') > 0);
 $navBelowCount6 = (int)($this->countModules('nav-below-6') > 0);
 
-$navBelowCount = $navBelowCount1 + $navBelowCount2 + $navBelowCount3 + $navBelowCount4 + $navBelowCount5 + $navBelowCount6;
-
-if ($navBelowCount) : $navBelowClass = 'count-' . $navBelowCount; endif;
+if ($navBelowCount) : $navBelowClass = 'count-' . 12 / ($navBelowCount1 + $navBelowCount2 + $navBelowCount3 + $navBelowCount4 + $navBelowCount5 + $navBelowCount6); endif;
 
 #--------------------------------------------------------------------------#
 
+$contentAboveCount  = NULL;
 $contentAboveCount1 = (int)($this->countModules('content-above-1') > 0);
 $contentAboveCount2 = (int)($this->countModules('content-above-2') > 0);
 $contentAboveCount3 = (int)($this->countModules('content-above-3') > 0);
@@ -150,12 +148,11 @@ $contentAboveCount4 = (int)($this->countModules('content-above-4') > 0);
 $contentAboveCount5 = (int)($this->countModules('content-above-5') > 0);
 $contentAboveCount6 = (int)($this->countModules('content-above-6') > 0);
 
-$contentAboveCount = $contentAboveCount1 + $contentAboveCount2 + $contentAboveCount3 + $contentAboveCount4 + $contentAboveCount5 + $contentAboveCount6;
-
-if ($contentAboveCount) : $contentAboveClass = 'count-' . $contentAboveCount; endif;
+if ($contentAboveCount) : $contentAboveClass = 'span' . 12 / ($contentAboveCount1 + $contentAboveCount2 + $contentAboveCount3 + $contentAboveCount4 + $contentAboveCount5 + $contentAboveCount6); endif;
 
 #--------------------------------------------------------------------------#
 
+$contentBelowCount  = NULL;
 $contentBelowCount1 = (int)($this->countModules('content-below-1') > 0);
 $contentBelowCount2 = (int)($this->countModules('content-below-2') > 0);
 $contentBelowCount3 = (int)($this->countModules('content-below-3') > 0);
@@ -163,12 +160,11 @@ $contentBelowCount4 = (int)($this->countModules('content-below-4') > 0);
 $contentBelowCount5 = (int)($this->countModules('content-below-5') > 0);
 $contentBelowCount6 = (int)($this->countModules('content-below-6') > 0);
 
-$contentBelowCount = $contentBelowCount1 + $contentBelowCount2 + $contentBelowCount3 + $contentBelowCount4 + $contentBelowCount5 + $contentBelowCount6;
-
-if ($contentBelowCount) : $contentBelowClass = 'count-' . $contentBelowCount; endif;
+if ($contentBelowCount) : $contentBelowClass = 'count-' . 12 / ($contentBelowCount1 + $contentBelowCount2 + $contentBelowCount3 + $contentBelowCount4 + $contentBelowCount5 + $contentBelowCount6); endif;
 
 #--------------------------------------------------------------------------#
 
+$footerAboveCount = NULL;
 $footerAboveCount1 = (int)($this->countModules('footer-above-1') > 0);
 $footerAboveCount2 = (int)($this->countModules('footer-above-2') > 0);
 $footerAboveCount3 = (int)($this->countModules('footer-above-3') > 0);
@@ -176,9 +172,7 @@ $footerAboveCount4 = (int)($this->countModules('footer-above-4') > 0);
 $footerAboveCount5 = (int)($this->countModules('footer-above-5') > 0);
 $footerAboveCount6 = (int)($this->countModules('footer-above-6') > 0);
 
-$footerAboveCount = $footerAboveCount1 + $footerAboveCount2 + $footerAboveCount3 + $footerAboveCount4 + $footerAboveCount5 + $footerAboveCount6;
-
-if ($footerAboveCount) : $footerAboveClass = 'count-' . $footerAboveCount; endif;
+if ($footerAboveCount) : $footerAboveClass = 'count-' . 12 / ($footerAboveCount1 + $footerAboveCount2 + $footerAboveCount3 + $footerAboveCount4 + $footerAboveCount5 + $footerAboveCount6); endif;
 
 #------------------------------ Column Layout -----------------------------#
 
