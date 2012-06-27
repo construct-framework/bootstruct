@@ -50,7 +50,7 @@
 <?php endif ?>
 
 <?php if ($headerAboveCount) : ?>
-<div id="header-above" class="clearfix">
+<div id="header-above" class="clearfix row-fluid">
 	<?php if ($this->countModules('header-above-1')) : ?>
 	<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
 		<jdoc:include type="modules" name="header-above-1" style="div" />
@@ -166,7 +166,7 @@
 <section id="body-container">
 
 <?php if ($headerBelowCount) : ?>
-<div id="header-below" class="clearfix">
+<div id="header-below" class="clearfix row-fluid">
 	<?php if ($this->countModules('header-below-1')) : ?>
 	<div id="header-below-1" class="<?php echo $headerBelowClass ?>">
 		<jdoc:include type="modules" name="header-below-1" style="div" module-class="gutter" />
@@ -212,7 +212,7 @@
 <div id="content-container" class="clear clearfix">
 
 <?php if ($navBelowCount) : ?>
-<div id="nav-below" class="clearfix">
+<div id="nav-below" class="clearfix row-fluid">
 	<?php if ($this->countModules('nav-below-1')) : ?>
 	<div id="nav-below-1" class="<?php echo $navBelowClass ?>">
 		<jdoc:include type="modules" name="nav-below-1" style="div" module-class="gutter" />
@@ -304,7 +304,7 @@
 			<jdoc:include type="component" />
 
 			<?php if ($contentBelowCount) : ?>
-			<div id="content-below" class="clearfix">
+			<div id="content-below" class="clearfix row-fluid">
 				<?php if ($this->countModules('content-below-1')) : ?>
 				<div id="content-below-1" class="<?php echo $contentBelowClass ?>">
 					<jdoc:include type="modules" name="content-below-1" style="div" module-class="gutter" />
@@ -347,7 +347,7 @@
 	</div>
 
 	<?php if ($columnGroupAlphaCount) : ?>
-	<div id="column-group-alpha" class="clearfix">
+	<div id="column-group-alpha" class="clearfix row-fluid">
 		<?php if ($this->countModules('column-1')) : ?>
 		<div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
 			<div class="gutter clearfix">
@@ -368,7 +368,7 @@
 </div>
 
 <?php if ($columnGroupBetaCount) : ?>
-<div id="column-group-beta" class="clearfix">
+<div id="column-group-beta" class="clearfix row-fluid">
 	<?php if ($this->countModules('column-3')) : ?>
 	<div id="column-3" class="<?php echo $columnGroupBetaClass ?>">
 		<div class="gutter clearfix">
@@ -387,7 +387,7 @@
 	<?php endif ?>
 
 <?php if ($footerAboveCount) : ?>
-<div id="footer-above" class="clearfix">
+<div id="footer-above" class="clearfix row-fluid">
 	<?php if ($this->countModules('footer-above-1')) : ?>
 	<div id="footer-above-1" class="<?php echo $footerAboveClass ?>">
 		<jdoc:include type="modules" name="footer-above-1" style="div" module-class="gutter" />
