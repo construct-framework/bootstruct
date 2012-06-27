@@ -420,6 +420,7 @@ $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-
 
 // Style sheets
 $doc->addStyleSheet($template . '/css/screen.css', 'text/css', 'screen');
+$doc->addStyleSheet($template . '/css/bootstrap.min.css', 'text/css', 'screen');
 $doc->addStyleSheet($template . '/css/print.css', 'text/css', 'print');
 if ($gridSystem != '-1') {
     $doc->addStyleSheet($template . '/css/grids/' . $gridSystem, 'text/css', 'screen');
@@ -458,6 +459,7 @@ if ($googleWebFont3) {
 }
 
 // JavaScript
+$doc->addScript($template . '/js/bootstrap.min.js');
 
 //Quick port of Modernizer's method of replacing "no-js" HTML class with "js" - NOTE: removes all other classes added to HTML element
 $doc->addCustomTag('<script type="text/javascript">docElement = document.documentElement;docElement.className = docElement.className.replace(/\bno-js\b/, \'js\');</script>');
@@ -490,25 +492,3 @@ if ($IECSS3) {
     $doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
 }
 $doc->addCustomTag('<![endif]-->');
-
-// Internet Explorer 6 Fixes
-$doc->addCustomTag('<!--[if lt IE 7]>');
-$doc->addCustomTag('<link rel="stylesheet" href="' . $template . '/css/ie6.css" type="text/css" media="screen" />');
-$doc->addCustomTag('<style type="text/css">');
-$doc->addCustomTag('body {text-align:center;}');
-$doc->addCustomTag('#body-container {text-align:left;}');
-if ($useStickyFooter) {
-    $doc->addCustomTag('body.sticky-footer #footer-push {display:table;height:100%;}');
-}
-if (!$fullWidth) {
-    $doc->addCustomTag('#body-container, #header-above, #header, #footer {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
-} else {
-    $doc->addCustomTag('#body-container, #header-above {width: expression( document.body.clientWidth >' . ($siteWidth - 1) . ' ? "' . $siteWidth . $siteWidthUnit . '" : "auto" );margin:0 auto;}');
-}
-$doc->addCustomTag('</style>');
-if ($IE6TransFix) {
-    $doc->addCustomTag('<script type="text/javascript" src="' . $template . '/js/DD_belatedPNG_0.0.8a-min.js"></script>');
-    $doc->addCustomTag('<script type="text/javascript">DD_belatedPNG.fix(\'' . $IE6TransFixTargets . '\');</script>');
-}
-$doc->addCustomTag('<![endif]-->');
-
