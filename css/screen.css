@@ -582,6 +582,10 @@ ul.menu-horizontal li {
 	margin-bottom : 0;
 }
 
+ul.pagenav {
+	margin: 0;
+}
+
 .pagenav li {
 	margin     : 0;
 	list-style : none;
@@ -909,6 +913,7 @@ ul.menu li {
 	position : relative;
 	margin   : 0;
 	padding  : 0;
+	list-style-type: none;
 }
 
 ul.menu a,
