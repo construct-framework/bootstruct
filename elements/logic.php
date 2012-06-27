@@ -112,7 +112,7 @@ $headerAboveCount4 = (int)($this->countModules('header-above-4') > 0);
 $headerAboveCount5 = (int)($this->countModules('header-above-5') > 0);
 $headerAboveCount6 = (int)($this->countModules('header-above-6') > 0);
 
-if ($headerAboveCount) : $headerAboveClass = 'count-' . 12 / ($headerAboveCount1 + $headerAboveCount2 + $headerAboveCount3 + $headerAboveCount4 + $headerAboveCount5 + $headerAboveCount6); endif;
+if ($headerAboveCount) : $headerAboveClass = 'span' . 12 / ($headerAboveCount1 + $headerAboveCount2 + $headerAboveCount3 + $headerAboveCount4 + $headerAboveCount5 + $headerAboveCount6); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -124,7 +124,7 @@ $headerBelowCount4 = (int)($this->countModules('header-below-4') > 0);
 $headerBelowCount5 = (int)($this->countModules('header-below-5') > 0);
 $headerBelowCount6 = (int)($this->countModules('header-below-6') > 0);
 
-if ($headerBelowCount) : $headerBelowClass = 'count-' . 12 / ($headerBelowCount1 + $headerBelowCount2 + $headerBelowCount3 + $headerBelowCount4 + $headerBelowCount5 + $headerBelowCount6); endif;
+if ($headerBelowCount) : $headerBelowClass = 'span' . 12 / ($headerBelowCount1 + $headerBelowCount2 + $headerBelowCount3 + $headerBelowCount4 + $headerBelowCount5 + $headerBelowCount6); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -136,7 +136,7 @@ $navBelowCount4 = (int)($this->countModules('nav-below-4') > 0);
 $navBelowCount5 = (int)($this->countModules('nav-below-5') > 0);
 $navBelowCount6 = (int)($this->countModules('nav-below-6') > 0);
 
-if ($navBelowCount) : $navBelowClass = 'count-' . 12 / ($navBelowCount1 + $navBelowCount2 + $navBelowCount3 + $navBelowCount4 + $navBelowCount5 + $navBelowCount6); endif;
+if ($navBelowCount) : $navBelowClass = 'span' . 12 / ($navBelowCount1 + $navBelowCount2 + $navBelowCount3 + $navBelowCount4 + $navBelowCount5 + $navBelowCount6); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -160,7 +160,7 @@ $contentBelowCount4 = (int)($this->countModules('content-below-4') > 0);
 $contentBelowCount5 = (int)($this->countModules('content-below-5') > 0);
 $contentBelowCount6 = (int)($this->countModules('content-below-6') > 0);
 
-if ($contentBelowCount) : $contentBelowClass = 'count-' . 12 / ($contentBelowCount1 + $contentBelowCount2 + $contentBelowCount3 + $contentBelowCount4 + $contentBelowCount5 + $contentBelowCount6); endif;
+if ($contentBelowCount) : $contentBelowClass = 'span' . 12 / ($contentBelowCount1 + $contentBelowCount2 + $contentBelowCount3 + $contentBelowCount4 + $contentBelowCount5 + $contentBelowCount6); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -172,22 +172,23 @@ $footerAboveCount4 = (int)($this->countModules('footer-above-4') > 0);
 $footerAboveCount5 = (int)($this->countModules('footer-above-5') > 0);
 $footerAboveCount6 = (int)($this->countModules('footer-above-6') > 0);
 
-if ($footerAboveCount) : $footerAboveClass = 'count-' . 12 / ($footerAboveCount1 + $footerAboveCount2 + $footerAboveCount3 + $footerAboveCount4 + $footerAboveCount5 + $footerAboveCount6); endif;
+if ($footerAboveCount) : $footerAboveClass = 'span' . 12 / ($footerAboveCount1 + $footerAboveCount2 + $footerAboveCount3 + $footerAboveCount4 + $footerAboveCount5 + $footerAboveCount6); endif;
 
 #------------------------------ Column Layout -----------------------------#
 
+$columnGroupAlphaCount = NULL;
 $column1Count = (int)($this->countModules('column-1') > 0);
 $column2Count = (int)($this->countModules('column-2') > 0);
 
 $columnGroupAlphaCount = $column1Count + $column2Count;
+if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'span' . 12 / $columnGroupAlphaCount; endif;
 
-if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'count-' . $columnGroupAlphaCount; endif;
-
+$columnGroupBetaCount = NULL;
 $column3Count = (int)($this->countModules('column-3') > 0);
 $column4Count = (int)($this->countModules('column-4') > 0);
 
 $columnGroupBetaCount = $column3Count + $column4Count;
-if ($columnGroupBetaCount) : $columnGroupBetaClass = 'count-' . $columnGroupBetaCount; endif;
+if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupBetaCount; endif;
 
 $columnLayout = 'main-only';
 
