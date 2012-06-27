@@ -1,33 +1,33 @@
 <?php defined('_JEXEC') or die;
 /**
  * @package        Unified HTML5 Template Framework for Joomla!+
- * @author        Cristina Solana http://nightshiftcreative.com
- * @author        Matt Thomas http://construct-framework.com | http://betweenbrain.com
- * @copyright    Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.
+ * @author         Cristina Solana http://nightshiftcreative.com
+ * @author         Matt Thomas http://construct-framework.com | http://betweenbrain.com
+ * @copyright      Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.
  * @license        GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  */
 
 // Call the Construct Template Helper Class
 if (JFile::exists(dirname(__FILE__) . '/helper.php')) {
-    include dirname(__FILE__) . '/helper.php';
+	include dirname(__FILE__) . '/helper.php';
 }
 
 // To get an application object
-$app = JFactory::getApplication();
+$app          = JFactory::getApplication();
 // Returns a reference to the global document object
-$doc = JFactory::getDocument();
+$doc          = JFactory::getDocument();
 // Checks for any system messages
 $messageQueue = $app->getMessageQueue();
 // Define relative path to the  current template directory
-$template = 'templates/' . $this->template;
+$template     = 'templates/' . $this->template;
 // Define absolute path to the template directory
-$templateDir = JPATH_THEMES . '/' . $this->template;
+$templateDir  = JPATH_THEMES . '/' . $this->template;
 // Get the current URL
-$url = clone(JURI::getInstance());
+$url          = clone(JURI::getInstance());
 // To access the current user object
-$user = JFactory::getUser();
+$user         = JFactory::getUser();
 // Get the current view
-$view = JRequest::getCmd('view');
+$view         = JRequest::getCmd('view');
 
 // Define shortcuts for template parameters
 $customStyleSheet      = $this->params->get('customStyleSheet');
@@ -67,8 +67,8 @@ $stickyFooterHeight    = htmlspecialchars($this->params->get('stickyFooterHeight
 $useStickyFooter       = $this->params->get('useStickyFooter');
 
 // Define absolute paths to files
-$mdetectFile = JPATH_THEMES . '/' . $this->template . '/elements/mdetect.php';
-$mTemplate = JPATH_THEMES . '/' . $this->template . '/mobile.php';
+$mdetectFile        = JPATH_THEMES . '/' . $this->template . '/elements/mdetect.php';
+$mTemplate          = JPATH_THEMES . '/' . $this->template . '/mobile.php';
 $alternatemTemplate = JPATH_THEMES . '/' . $this->template . '/layouts/mobile.php';
 
 // Change generator tag
@@ -76,25 +76,25 @@ $this->setGenerator($setGeneratorTag);
 
 // Enable Mootols
 if ($loadMoo) {
-    JHtml::_('behavior.framework', true);
+	JHtml::_('behavior.framework', true);
 }
 
 // Enable modal pop-ups
 if ($loadMoo && $loadModal) {
-    JHtml::_('behavior.modal');
+	JHtml::_('behavior.modal');
 }
 
 // Remove MooTools if set to no.
 if (!$loadMoo) {
-    unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
-    unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
-    unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
-    unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
-    unset($doc->_scripts[$this->baseurl . '/media/system/js/modal.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/modal.js']);
 }
 
 // Change Google Web Font name for CSS
-$googleWebFontFamily = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont);
+$googleWebFontFamily  = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont);
 $googleWebFontFamily2 = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont2);
 $googleWebFontFamily3 = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont3);
 
@@ -164,7 +164,7 @@ if ($contentBelowCount) : $contentBelowClass = 'span' . 12 / ($contentBelowCount
 
 #--------------------------------------------------------------------------#
 
-$footerAboveCount = NULL;
+$footerAboveCount  = NULL;
 $footerAboveCount1 = (int)($this->countModules('footer-above-1') > 0);
 $footerAboveCount2 = (int)($this->countModules('footer-above-2') > 0);
 $footerAboveCount3 = (int)($this->countModules('footer-above-3') > 0);
@@ -177,15 +177,15 @@ if ($footerAboveCount) : $footerAboveClass = 'span' . 12 / ($footerAboveCount1 +
 #------------------------------ Column Layout -----------------------------#
 
 $columnGroupAlphaCount = NULL;
-$column1Count = (int)($this->countModules('column-1') > 0);
-$column2Count = (int)($this->countModules('column-2') > 0);
+$column1Count          = (int)($this->countModules('column-1') > 0);
+$column2Count          = (int)($this->countModules('column-2') > 0);
 
 $columnGroupAlphaCount = $column1Count + $column2Count;
 if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'span' . 12 / $columnGroupAlphaCount; endif;
 
 $columnGroupBetaCount = NULL;
-$column3Count = (int)($this->countModules('column-3') > 0);
-$column4Count = (int)($this->countModules('column-4') > 0);
+$column3Count         = (int)($this->countModules('column-3') > 0);
+$column4Count         = (int)($this->countModules('column-4') > 0);
 
 $columnGroupBetaCount = $column3Count + $column4Count;
 if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupBetaCount; endif;
@@ -193,11 +193,10 @@ if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupB
 $columnLayout = 'main-only';
 
 if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main';
-elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
+	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main'; elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
 elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'main-beta-' . $columnGroupBetaCount;
+	$columnLayout = 'main-beta-' . $columnGroupBetaCount;
 endif;
 
 #-------------------------------- Item ID ---------------------------------#
@@ -207,31 +206,30 @@ $itemId = JRequest::getInt('Itemid', 0);
 #------------------------------- Article ID -------------------------------#
 
 if ($view == 'article')
-    $articleId = JRequest::getInt('id');
+	$articleId = JRequest::getInt('id');
 else ($articleId = NULL);
 
 #------------------------------- Section ID -------------------------------#
 
 function getSection($id)
 {
-    $database = JFactory::getDBO();
-    if ((substr(JVERSION, 0, 3) >= '1.6')) {
-        return NULL;
-    }
-    elseif (JRequest::getCmd('view', 0) == "section") {
-        return $id;
-    }
-    elseif (JRequest::getCmd('view', 0) == "category") {
-        $sql = "SELECT section FROM #__categories WHERE id = $id ";
-        $database->setQuery($sql);
-        return $database->loadResult();
-    }
-    elseif (JRequest::getCmd('view', 0) == "article") {
-        $temp = explode(":", $id);
-        $sql = "SELECT sectionid FROM #__content WHERE id = " . $temp[0];
-        $database->setQuery($sql);
-        return $database->loadResult();
-    }
+	$database = JFactory::getDBO();
+	if ((substr(JVERSION, 0, 3) >= '1.6')) {
+		return NULL;
+	} elseif (JRequest::getCmd('view', 0) == "section") {
+		return $id;
+	}
+	elseif (JRequest::getCmd('view', 0) == "category") {
+		$sql = "SELECT section FROM #__categories WHERE id = $id ";
+		$database->setQuery($sql);
+		return $database->loadResult();
+	}
+	elseif (JRequest::getCmd('view', 0) == "article") {
+		$temp = explode(":", $id);
+		$sql  = "SELECT sectionid FROM #__content WHERE id = " . $temp[0];
+		$database->setQuery($sql);
+		return $database->loadResult();
+	}
 }
 
 $sectionId = getSection(JRequest::getInt('id'));
@@ -240,19 +238,18 @@ $sectionId = getSection(JRequest::getInt('id'));
 
 function getCategory($id)
 {
-    $database = JFactory::getDBO();
-    if (JRequest::getCmd('view', 0) == "section") {
-        return null;
-    }
-    elseif ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
-        return $id;
-    }
-    elseif (JRequest::getCmd('view', 0) == "article") {
-        $temp = explode(":", $id);
-        $sql = "SELECT catid FROM #__content WHERE id = " . $temp[0];
-        $database->setQuery($sql);
-        return $database->loadResult();
-    }
+	$database = JFactory::getDBO();
+	if (JRequest::getCmd('view', 0) == "section") {
+		return null;
+	} elseif ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
+		return $id;
+	}
+	elseif (JRequest::getCmd('view', 0) == "article") {
+		$temp = explode(":", $id);
+		$sql  = "SELECT catid FROM #__content WHERE id = " . $temp[0];
+		$database->setQuery($sql);
+		return $database->loadResult();
+	}
 }
 
 $catId = getCategory(JRequest::getInt('id'));
@@ -261,22 +258,22 @@ $catId = getCategory(JRequest::getInt('id'));
 
 if ($catId && ($inheritStyle || $inheritLayout)) {
 
-    function getParentCategory($id)
-    {
-        $database = JFactory::getDBO();
-        $sql = "SELECT parent_id
+	function getParentCategory($id)
+	{
+		$database = JFactory::getDBO();
+		$sql      = "SELECT parent_id
         FROM #__categories
         WHERE id = $id";
-        $database->setQuery($sql);
-        return $database->loadResult();
-    }
+		$database->setQuery($sql);
+		return $database->loadResult();
+	}
 
-    $parentCategory = getParentCategory($catId);
+	$parentCategory = getParentCategory($catId);
 
-    function getAncestorCategories($id)
-    {
-        $database = JFactory::getDBO();
-        $sql = "SELECT b.id, b.title
+	function getAncestorCategories($id)
+	{
+		$database = JFactory::getDBO();
+		$sql      = "SELECT b.id, b.title
         FROM #__categories a,
         #__categories b
         WHERE a.id = $id
@@ -284,16 +281,15 @@ if ($catId && ($inheritStyle || $inheritLayout)) {
         AND a.rgt < b.rgt
         AND a.id <> b.id
         AND b.lft > 0";
-        $database->setQuery($sql);
-        return $database->loadObjectList();
-    }
-
+		$database->setQuery($sql);
+		return $database->loadObjectList();
+	}
 }
 
 #--------------------------------- Alias ----------------------------------#
 
 if ($itemId) {
-    $currentAlias = $app->getMenu()->getActive()->alias;
+	$currentAlias = $app->getMenu()->getActive()->alias;
 }
 
 #----------------------------- Component Name -----------------------------#
@@ -314,20 +310,20 @@ $styleOverride->includeFile[] = $template . '/css/item/item-' . $itemId . '.css'
 $styleOverride->includeFile[] = $template . '/css/category/' . $overrideTheme . '-category-' . $catId . '.css';
 $styleOverride->includeFile[] = $template . '/css/category/category-' . $catId . '.css';
 if ($catId && $inheritStyle) {
-    $styleOverride->includeFile[] = $template . '/css/category/category-' . $parentCategory . '.css';
+	$styleOverride->includeFile[] = $template . '/css/category/category-' . $parentCategory . '.css';
 
-    $results = getAncestorCategories($catId);
-    if (count($results) > 0) {
-        foreach ($results as $result) {
-            $styleOverride->includeFile[] = $template . '/css/category/category-' . $result->id . '.css';
-        }
-    }
+	$results = getAncestorCategories($catId);
+	if (count($results) > 0) {
+		foreach ($results as $result) {
+			$styleOverride->includeFile[] = $template . '/css/category/category-' . $result->id . '.css';
+		}
+	}
 }
 if ($view == 'category') {
-    $styleOverride->includeFile[] = $template . '/css/category/category.css';
+	$styleOverride->includeFile[] = $template . '/css/category/category.css';
 }
 if ($view == 'categories') {
-    $styleOverride->includeFile[] = $template . '/css/category/categories.css';
+	$styleOverride->includeFile[] = $template . '/css/category/categories.css';
 }
 $styleOverride->includeFile[] = $template . '/css/section/' . $overrideTheme . '-section-' . $sectionId . '.css';
 $styleOverride->includeFile[] = $template . '/css/section/section-' . $sectionId . '.css';
@@ -361,20 +357,20 @@ $layoutOverride->includeFile[] = $template . '/layouts/item/item-' . $itemId . '
 $layoutOverride->includeFile[] = $template . '/layouts/category/' . $overrideTheme . '-category-' . $catId . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $catId . '.php';
 if ($catId && $inheritLayout) {
-    $layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $parentCategory . '.php';
+	$layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $parentCategory . '.php';
 
-    $results = getAncestorCategories($catId);
-    if (count($results) > 0) {
-        foreach ($results as $result) {
-            $layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $result->id . '.php';
-        }
-    }
+	$results = getAncestorCategories($catId);
+	if (count($results) > 0) {
+		foreach ($results as $result) {
+			$layoutOverride->includeFile[] = $template . '/layouts/category/category-' . $result->id . '.php';
+		}
+	}
 }
 if ($view == 'category') {
-    $layoutOverride->includeFile[] = $template . '/layouts/category/category.php';
+	$layoutOverride->includeFile[] = $template . '/layouts/category/category.php';
 }
 if ($view == 'categories') {
-    $layoutOverride->includeFile[] = $template . '/layouts/category/categories.php';
+	$layoutOverride->includeFile[] = $template . '/layouts/category/categories.php';
 }
 $layoutOverride->includeFile[] = $template . '/layouts/section/' . $overrideTheme . '-section-' . $sectionId . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/section/section-' . $sectionId . '.php';
@@ -418,39 +414,39 @@ $doc->addStyleSheet($template . '/css/screen.css', 'text/css', 'screen');
 $doc->addStyleSheet($template . '/css/bootstrap.min.css', 'text/css', 'screen');
 $doc->addStyleSheet($template . '/css/print.css', 'text/css', 'print');
 if ($gridSystem != '-1') {
-    $doc->addStyleSheet($template . '/css/grids/' . $gridSystem, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem, 'text/css', 'screen');
 }
 if ($customStyleSheet != '-1') {
-    $doc->addStyleSheet($template . '/css/' . $customStyleSheet, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/' . $customStyleSheet, 'text/css', 'screen');
 }
 if ($this->direction == 'rtl') {
-    $doc->addStyleSheet($template . '/css/rtl.css', 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/rtl.css', 'text/css', 'screen');
 }
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile();
 if ($cssFile) {
-    $doc->addStyleSheet($cssFile, 'text/css', 'screen');
+	$doc->addStyleSheet($cssFile, 'text/css', 'screen');
 }
 
 // Style sheet switcher
 if ($enableSwitcher) {
-    $doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
-    $doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
-    $doc->addScript($template . '/js/styleswitch.js');
+	$doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
+	$doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
+	$doc->addScript($template . '/js/styleswitch.js');
 }
 
 // Typography
 if ($googleWebFont) {
-    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '');
-    $doc->addStyleDeclaration($googleWebFontTargets . ' {font-family:' . $googleWebFontFamily . ', serif;}');
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '');
+	$doc->addStyleDeclaration($googleWebFontTargets . ' {font-family:' . $googleWebFontFamily . ', serif;}');
 }
 if ($googleWebFont2) {
-    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '');
-    $doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;}');
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '');
+	$doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;}');
 }
 if ($googleWebFont3) {
-    $doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '');
-    $doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;}');
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '');
+	$doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;}');
 }
 
 // JavaScript
@@ -461,29 +457,29 @@ $doc->addCustomTag('<script type="text/javascript">docElement = document.documen
 
 $doc->addCustomTag('<script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
 if ($loadjQuery) {
-    $doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
-    $doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
+	$doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
+	$doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
 }
 
 // Layout Declarations
 if ($siteWidth) {
-    $doc->addStyleDeclaration('#body-container, #header-above {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ';}');
+	$doc->addStyleDeclaration('#body-container, #header-above {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ';}');
 }
 if (($siteWidthType == 'max-width') && $fluidMedia) {
-    $doc->addStyleDeclaration('img, object {max-width:100%;}');
+	$doc->addStyleDeclaration('img, object {max-width:100%;}');
 }
 if (!$fullWidth) {
-    $doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
+	$doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
 }
 if ($useStickyFooter) {
-    $doc->addStyleDeclaration('.sticky-footer #body-container {padding-bottom:' . $stickyFooterHeight . 'px;}');
-    $doc->addStyleDeclaration('.sticky-footer #footer {margin-top:-' . $stickyFooterHeight . 'px;height:' . $stickyFooterHeight . 'px;}');
+	$doc->addStyleDeclaration('.sticky-footer #body-container {padding-bottom:' . $stickyFooterHeight . 'px;}');
+	$doc->addStyleDeclaration('.sticky-footer #footer {margin-top:-' . $stickyFooterHeight . 'px;height:' . $stickyFooterHeight . 'px;}');
 }
 
 // Internet Explorer Fixes
 $doc->addCustomTag('<!--[if lt IE 9]>');
 $doc->addCustomTag('<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>');
 if ($IECSS3) {
-    $doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
+	$doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
 }
 $doc->addCustomTag('<![endif]-->');
