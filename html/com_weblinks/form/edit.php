@@ -65,10 +65,10 @@ $params = $this->state->get('params');
                 <?php echo $this->form->getInput('language'); ?>
             </div>
             <div class="formelm-buttons">
-                <button type="button" onclick="Joomla.submitbutton('weblink.save')">
+                <button type="button" class="btn" onclick="Joomla.submitbutton('weblink.save')">
                     <?php echo JText::_('JSAVE') ?>
                 </button>
-                <button type="button" onclick="Joomla.submitbutton('weblink.cancel')">
+                <button type="button" class="btn" onclick="Joomla.submitbutton('weblink.cancel')">
                     <?php echo JText::_('JCANCEL') ?>
                 </button>
             </div>

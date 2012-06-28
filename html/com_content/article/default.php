@@ -191,7 +191,7 @@ endif; ?>
     <?php if ($params->get('show_readmore') && $this->item->fulltext != null) :
         $link1 = JRoute::_('index.php?option=com_users&view=login');
         $link = new JURI($link1);?>
-        <p class="readmore">
+        <p class="readmore btn btn-primary">
             <a href="<?php echo $link; ?>">
                 <?php $attribs = json_decode($this->item->attribs);  ?>
                 <?php

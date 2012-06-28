@@ -31,7 +31,7 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
         <?php echo $this->form->monthField; ?>
         <?php echo $this->form->yearField; ?>
         <?php echo $this->form->limitField; ?>
-        <button type="submit" class="button"><?php echo JText::_('JGLOBAL_FILTER_BUTTON'); ?></button>
+        <button type="submit" class="button btn"><?php echo JText::_('JGLOBAL_FILTER_BUTTON'); ?></button>
         <input type="hidden" name="view" value="archive">
         <input type="hidden" name="option" value="com_content">
         <input type="hidden" name="limitstart" value="0">

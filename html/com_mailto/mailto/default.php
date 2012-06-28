@@ -56,11 +56,11 @@ Joomla.submitbutton = function (pressbutton) {
             <input type="text" id="subject_field" name="subject" class="inputbox" value="<?php echo $this->escape($data->subject) ?>" size="25" />
         </label>
 
-        <button class="button" onclick="return Joomla.submitbutton('send');">
+        <button class="button btn" onclick="return Joomla.submitbutton('send');">
             <?php echo JText::_('COM_MAILTO_SEND'); ?>
         </button>
 
-        <button class="button" onclick="window.close();return false;">
+        <button class="button btn" onclick="window.close();return false;">
             <?php echo JText::_('COM_MAILTO_CANCEL'); ?>
         </button>
 

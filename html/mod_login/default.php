@@ -20,7 +20,7 @@ if ($type == 'logout') : ?>
     } endif; ?>
     </p>
     <?php endif; ?>
-    <input type="submit" name="Submit" class="button logout-button" value="<?php echo JText::_('JLOGOUT'); ?>" />
+    <input type="submit" name="Submit" class="button btn logout-button" value="<?php echo JText::_('JLOGOUT'); ?>" />
     <input type="hidden" name="option" value="com_users" />
     <input type="hidden" name="task" value="user.logout" />
     <input type="hidden" name="return" value="<?php echo $return; ?>" />
@@ -48,7 +48,7 @@ if ($type == 'logout') : ?>
         </label>
 
         <?php endif; ?>
-        <input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGIN') ?>" />
+        <input type="submit" name="Submit" class="button btn btn-primary" value="<?php echo JText::_('JLOGIN') ?>" />
         <input type="hidden" name="option" value="com_users" />
         <input type="hidden" name="task" value="user.login" />
         <input type="hidden" name="return" value="<?php echo $return; ?>" />

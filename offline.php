@@ -318,7 +318,7 @@ else {
                         <label id="form-login-remember" for="remember"><?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>
                             <input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('JGLOBAL_REMEMBER_ME') ?>" id="remember" />
                         </label>
-                        <input type="submit" name="Submit" class="button" value="<?php echo JText::_('JLOGIN') ?>" />
+                        <input type="submit" name="Submit" class="button btn" value="<?php echo JText::_('JLOGIN') ?>" />
                         <input type="hidden" name="option" value="com_users" />
                         <input type="hidden" name="task" value="user.login" />
                         <input type="hidden" name="return" value="<?php echo base64_encode(JURI::base()) ?>" />
@@ -356,7 +356,7 @@ else {
                         <label id="form-login-remember" for="remember"><?php echo JText::_('Remember me') ?>
                             <input type="checkbox" name="remember" class="inputbox" value="yes" alt="<?php echo JText::_('Remember me') ?>" id="remember" />
                         </label>
-                        <input type="submit" name="Submit" class="button" value="<?php echo JText::_('LOGIN') ?>" />
+                        <input type="submit" name="Submit" class="button btn" value="<?php echo JText::_('LOGIN') ?>" />
                     </fieldset>
                     <input type="hidden" name="option" value="com_user" />
                     <input type="hidden" name="task" value="login" />

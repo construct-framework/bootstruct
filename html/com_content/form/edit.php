@@ -57,10 +57,10 @@ endif;
             <?php endif; ?>
 
             <div class="formelm-buttons">
-                <button type="button" onclick="Joomla.submitbutton('article.save')">
+                <button type="button" class="btn" onclick="Joomla.submitbutton('article.save')">
                     <?php echo JText::_('JSAVE') ?>
                 </button>
-                <button type="button" onclick="Joomla.submitbutton('article.cancel')">
+                <button type="button" class="btn" onclick="Joomla.submitbutton('article.cancel')">
                     <?php echo JText::_('JCANCEL') ?>
                 </button>
             </div>

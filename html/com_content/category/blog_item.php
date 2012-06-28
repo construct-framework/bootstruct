@@ -171,7 +171,7 @@ endif; ?>
         $link->setVar('return', base64_encode($returnURL));
     endif;
     ?>
-    <p class="readmore">
+    <p class="readmore btn btn-primary">
         <a href="<?php echo $link; ?>">
             <?php if (!$params->get('access-view')) :
             echo JText::_('COM_CONTENT_REGISTER_TO_READ_MORE');
