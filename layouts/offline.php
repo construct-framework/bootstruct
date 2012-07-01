@@ -17,10 +17,10 @@
     <jdoc:include type="head" />
 </head>
 
-<body class="<?php echo $columnLayout; if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($sectionId) echo ' section-' . $sectionId ?>">
+<body id="page-top" class="<?php echo $columnLayout; if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($sectionId) echo ' section-' . $sectionId ?>">
 
 <div id="footer-push">
-<a id="page-top" name="page-top"></a>
+
 <?php if ($headerAboveCount) : ?>
 <div id="header-above" class="clearfix">
     <?php if ($this->countModules('header-above-1')) : ?>

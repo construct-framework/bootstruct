@@ -399,11 +399,11 @@ $mobileLayoutOverride->includeFile[] = $template . '/layouts/mobile.php';
 // Custom tags
 
 // Always force latest IE rendering engine (even in intranet) & Chrome Frame
-$doc->addCustomTag('<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">');
+$doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
 // Set initial scale of mobile viewport to 100% - see http://bit.ly/sK7Zty
-$doc->addCustomTag(' <meta name="viewport" content="width=device-width, initial-scale=1.0">');
-
-$doc->addCustomTag('<meta name="copyright" content="' . htmlspecialchars($app->getCfg('sitename')) . '" />');
+$doc->setMetadata('viewport', 'width=device-width, initial-scale=1.0');
+// Define copyright of site content
+$doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
 
 // Site icons
 $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
