@@ -23,10 +23,10 @@ body {
 	padding : 0;
 }
 
-#load-first,
+/*#load-first,
 #footer-above {
 	float : left;
-}
+}*/
 
 #footer-above {
 	width : 100%;
