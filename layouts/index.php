@@ -25,19 +25,15 @@
 <div class="navbar">
 	<div class="navbar-inner">
 		<div class="container">
-			<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+			<a type="button" class="btn btn-navbar" href="<?php $url->setFragment('nav'); echo $url->toString() ?>"
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+			<span class="icon-bar"></span>
+          </a>
 
 			<a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
 
-			<div class="nav-collapse">
-				<nav id="nav" class="clear clearfix">
-					<jdoc:include type="modules" name="nav" style="raw" />
-				</nav>
-			</div>
 		</div>
 	</div>
 </div>
@@ -378,7 +374,20 @@
 	</div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
+
+<?php if ($this->countModules('nav')) : ?>
+<div class="navbar" id="primary-nav">
+	<div class="navbar-inner">
+		<div class="container">
+			<nav id="nav" class="clear clearfix">
+				<jdoc:include type="modules" name="nav" style="raw" />
+			</nav>
+		</div>
+	</div>
+</div>
+<?php endif ?>
+
 
 <?php if ($footerAboveCount) : ?>
 <div id="footer-above" class="clearfix row-fluid">
@@ -418,7 +427,7 @@
 	</div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
 </div>
 </section>
@@ -444,11 +453,11 @@
 
 <?php if ($this->countModules('debug')) : ?>
 <jdoc:include type="modules" name="debug" style="raw" />
-	<?php endif ?>
+<?php endif ?>
 
 <?php if ($this->countModules('analytics')) : ?>
 <jdoc:include type="modules" name="analytics" />
-	<?php endif ?>
+<?php endif ?>
 
 </body>
 </html>
