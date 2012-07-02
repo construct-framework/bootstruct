@@ -44,44 +44,44 @@
 <?php endif ?>
 
 <?php if ($headerAboveCount) : ?>
-<div id="header-above" class="clearfix row-fluid">
-	<?php if ($this->countModules('header-above-1')) : ?>
-	<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
-		<jdoc:include type="modules" name="header-above-1" style="div" />
-	</div>
-	<?php endif ?>
+	<div id="header-above" class="clearfix row-fluid">
+		<?php if ($this->countModules('header-above-1')) : ?>
+		<div id="header-above-1" class="<?php echo $headerAboveClass ?>">
+			<jdoc:include type="modules" name="header-above-1" style="div" />
+		</div>
+		<?php endif ?>
 
-	<?php if ($this->countModules('header-above-2')) : ?>
-	<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
-		<jdoc:include type="modules" name="header-above-2" style="div" />
-	</div>
-	<?php endif ?>
+		<?php if ($this->countModules('header-above-2')) : ?>
+		<div id="header-above-2" class="<?php echo $headerAboveClass ?>">
+			<jdoc:include type="modules" name="header-above-2" style="div" />
+		</div>
+		<?php endif ?>
 
-	<?php if ($this->countModules('header-above-3')) : ?>
-	<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
-		<jdoc:include type="modules" name="header-above-3" style="div" />
-	</div>
-	<?php endif ?>
+		<?php if ($this->countModules('header-above-3')) : ?>
+		<div id="header-above-3" class="<?php echo $headerAboveClass ?>">
+			<jdoc:include type="modules" name="header-above-3" style="div" />
+		</div>
+		<?php endif ?>
 
-	<?php if ($this->countModules('header-above-4')) : ?>
-	<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
-		<jdoc:include type="modules" name="header-above-4" style="div" />
-	</div>
-	<?php endif ?>
+		<?php if ($this->countModules('header-above-4')) : ?>
+		<div id="header-above-4" class="<?php echo $headerAboveClass ?>">
+			<jdoc:include type="modules" name="header-above-4" style="div" />
+		</div>
+		<?php endif ?>
 
-	<?php if ($this->countModules('header-above-5')) : ?>
-	<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
-		<jdoc:include type="modules" name="header-above-5" style="div" />
-	</div>
-	<?php endif ?>
+		<?php if ($this->countModules('header-above-5')) : ?>
+		<div id="header-above-5" class="<?php echo $headerAboveClass ?>">
+			<jdoc:include type="modules" name="header-above-5" style="div" />
+		</div>
+		<?php endif ?>
 
-	<?php if ($this->countModules('header-above-6')) : ?>
-	<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
-		<jdoc:include type="modules" name="header-above-6" style="div" />
+		<?php if ($this->countModules('header-above-6')) : ?>
+		<div id="header-above-6" class="<?php echo $headerAboveClass ?>">
+			<jdoc:include type="modules" name="header-above-6" style="div" />
+		</div>
+		<?php endif ?>
 	</div>
-	<?php endif ?>
-</div>
-	<?php endif ?>
+<?php endif ?>
 
 <header id="header" class="clear clearfix">
 	<div class="gutter clearfix">
