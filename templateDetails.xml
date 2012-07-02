@@ -61,6 +61,7 @@
         <filename>css/component/index.html</filename>
         <folder>css/grids</folder>
         <filename>css/item/index.html</filename>
+		<filename>css/bootstrap.min.css</filename>
         <filename>css/construct-dark.css</filename>
         <filename>css/construct-light.css</filename>
         <filename>css/diagnostic.css</filename>
@@ -198,7 +199,7 @@
                        label="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_LABEL"
                        directory="templates/bootstruct/css"
                        filter="\.css"
-                       exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css|mobile\.css"
+                       exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css|mobile\.css|bootstruct-responsive\.css"
                        description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_DESC"/>
                 <field name="gridSystem"
                        type="filelist"
