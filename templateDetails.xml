@@ -202,7 +202,7 @@
                        description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_DESC"/>
                 <field name="gridSystem"
                        type="filelist"
-                       default="construct-responsive.css"
+                       default="bootstruct-responsive.css"
                        label="TPL_BOOTSTRUCT_GRID_SYSTEM_LABEL"
                        directory="templates/bootstruct/css/grids"
                        filter="\.css"
