@@ -113,7 +113,7 @@ $headerAboveCount6 = (int)($this->countModules('header-above-6') > 0);
 
 $headerAboveCount = $headerAboveCount1 + $headerAboveCount2 + $headerAboveCount3 + $headerAboveCount4 + $headerAboveCount5 + $headerAboveCount6;
 
-if ($headerAboveCount) : $headerAboveClass = 'span' . (12 / $headerAboveCount); endif;
+if ($headerAboveCount) : $headerAboveClass = 'span' . strtr((12 / $headerAboveCount), array("." => "-")); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -126,7 +126,7 @@ $headerBelowCount6 = (int)($this->countModules('header-below-6') > 0);
 
 $headerBelowCount = $headerBelowCount1 + $headerBelowCount2 + $headerBelowCount3 + $headerBelowCount4 + $headerBelowCount5 + $headerBelowCount6;
 
-if ($headerBelowCount) : $headerBelowClass = 'span' . (12 / $headerBelowCount); endif;
+if ($headerBelowCount) : $headerBelowClass = 'span' . strtr((12 / $headerBelowCount), array("." => "-")); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -139,7 +139,7 @@ $navBelowCount6 = (int)($this->countModules('nav-below-6') > 0);
 
 $navBelowCount = $navBelowCount1 + $navBelowCount2 + $navBelowCount3 + $navBelowCount4 + $navBelowCount5 + $navBelowCount6;
 
-if ($navBelowCount) : $navBelowClass = 'span' . (12 / $navBelowCount); endif;
+if ($navBelowCount) : $navBelowClass = 'span' . strtr((12 / $navBelowCount), array("." => "-")); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -152,7 +152,7 @@ $contentAboveCount6 = (int)($this->countModules('content-above-6') > 0);
 
 $contentAboveCount = $contentAboveCount1 + $contentAboveCount2 + $contentAboveCount3 + $contentAboveCount4 + $contentAboveCount5 + $contentAboveCount6;
 
-if ($contentAboveCount) : $contentAboveClass = 'span' . (12 / $contentAboveCount); endif;
+if ($contentAboveCount) : $contentAboveClass = 'span' . strtr((12 / $contentAboveCount), array("." => "-")); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -165,7 +165,7 @@ $contentBelowCount6 = (int)($this->countModules('content-below-6') > 0);
 
 $contentBelowCount = $contentBelowCount1 + $contentBelowCount2 + $contentBelowCount3 + $contentBelowCount4 + $contentBelowCount5 + $contentBelowCount6;
 
-if ($contentBelowCount) : $contentBelowClass = 'span' . (12 / $contentBelowCount); endif;
+if ($contentBelowCount) : $contentBelowClass = 'span' . strtr((12 / $contentBelowCount), array("." => "-")); endif;
 
 #--------------------------------------------------------------------------#
 
@@ -178,7 +178,7 @@ $footerAboveCount6 = (int)($this->countModules('footer-above-6') > 0);
 
 $footerAboveCount = $footerAboveCount1 + $footerAboveCount2 + $footerAboveCount3 + $footerAboveCount4 + $footerAboveCount5 + $footerAboveCount6;
 
-if ($footerAboveCount) : $footerAboveClass = 'span' . (12 / $footerAboveCount); endif;
+if ($footerAboveCount) : $footerAboveClass = 'span' . strtr((12 / $footerAboveCount), array("." => "-")); endif;
 
 #------------------------------ Column Layout -----------------------------#
 
