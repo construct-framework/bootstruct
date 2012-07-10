@@ -79,7 +79,7 @@
         <filename>elements/jqueryversion.php</filename>
         <filename>elements/logic.php</filename>
         <filename>elements/mdetect.php</filename>
-        <filename>elements/upgradecheck.php</filename>
+        <filename>elements/version.php</filename>
         <folder>html</folder>
         <filename>images/index.html</filename>
         <filename>images/selector-arrow.png</filename>
@@ -449,7 +449,7 @@
                        size="50"/>
             </fieldset>
             <fieldset name="version_check">
-                <field label="TPL_BOOTSTRUCT_VERSION_CHECK_LABEL" type="upgradecheck"/>
+                <field label="TPL_BOOTSTRUCT_VERSION_CHECK_LABEL" type="version"/>
             </fieldset>
         </fields>
     </config>
