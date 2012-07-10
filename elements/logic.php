@@ -71,6 +71,11 @@ $mdetectFile        = JPATH_THEMES . '/' . $this->template . '/elements/mdetect.
 $mTemplate          = JPATH_THEMES . '/' . $this->template . '/mobile.php';
 $alternatemTemplate = JPATH_THEMES . '/' . $this->template . '/layouts/mobile.php';
 
+// Get the template's XML for versioning
+$xmlfile = JPATH_SITE . '/templates/bootstruct/templateDetails.xml';
+$data    = JApplicationHelper::parseXMLInstallFile($xmlfile);
+$version = $data['version'];
+
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
 
@@ -415,17 +420,17 @@ $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
 $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-icon');
 
 // Style sheets
-$doc->addStyleSheet($template . '/css/bootstrap.min.css', 'text/css', 'screen');
-$doc->addStyleSheet($template . '/css/screen.css', 'text/css', 'screen');
-$doc->addStyleSheet($template . '/css/print.css', 'text/css', 'print');
+$doc->addStyleSheet($template . '/css/bootstrap.min.css?' . $version, 'text/css', 'screen');
+$doc->addStyleSheet($template . '/css/screen.css?' . $version, 'text/css', 'screen');
+$doc->addStyleSheet($template . '/css/print.css?' . $version, 'text/css', 'print');
 if ($gridSystem != '-1') {
-	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
 if ($customStyleSheet != '-1') {
 	$doc->addStyleSheet($template . '/css/' . $customStyleSheet, 'text/css', 'screen');
 }
 if ($this->direction == 'rtl') {
-	$doc->addStyleSheet($template . '/css/rtl.css', 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/rtl.css?' . $version, 'text/css', 'screen');
 }
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile();
