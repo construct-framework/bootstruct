@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die;
 /**
- * @package        Unified HTML5 Template Framework for Joomla!+
+ * @package        Template Framework for Joomla!+
  * @author        Cristina Solana http://nightshiftcreative.com
  * @author        Matt Thomas http://construct-framework.com | http://betweenbrain.com
  * @copyright    Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.
