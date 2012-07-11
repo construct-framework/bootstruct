@@ -68,19 +68,19 @@ $stickyFooterHeight      = htmlspecialchars($this->params->get('stickyFooterHeig
 $useStickyFooter         = $this->params->get('useStickyFooter');
 
 // Define absolute paths to files
-$mdetectFile        = JPATH_THEMES . '/' . $this->template . '/elements/mdetect.php';
-$mTemplate          = JPATH_THEMES . '/' . $this->template . '/mobile.php';
-$alternatemTemplate = JPATH_THEMES . '/' . $this->template . '/layouts/mobile.php';
+$mdetectFile        = $templateDir . '/elements/mdetect.php';
+$mTemplate          = $templateDir . '/mobile.php';
+$alternatemTemplate = $templateDir . '/layouts/mobile.php';
 
 // Get the template's XML for versioning
-$xmlfile = JPATH_SITE . '/templates/bootstruct/templateDetails.xml';
+$xmlfile = $templateDir . '/templateDetails.xml';
 $data    = JApplicationHelper::parseXMLInstallFile($xmlfile);
 $version = $data['version'];
 
-if ($customStyleSheetVersion == ''){
+// Define fallback version number for custom style sheet
+if ($customStyleSheetVersion == '') {
 	$customStyleSheetVersion = $version;
 }
-
 
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
@@ -432,7 +432,7 @@ $doc->addStyleSheet($template . '/css/print.css?' . $version, 'text/css', 'print
 if ($gridSystem != '-1') {
 	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
-if ($customStyleSheet != '-1') {
+if ($customStyleSheet > -1) {
 	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion, 'text/css', 'screen');
 }
 if ($this->direction == 'rtl') {
@@ -441,7 +441,7 @@ if ($this->direction == 'rtl') {
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile();
 if ($cssFile) {
-	$doc->addStyleSheet($cssFile, 'text/css', 'screen');
+	$doc->addStyleSheet($cssFile . '?' . $version, 'text/css', 'screen');
 }
 
 // Style sheet switcher

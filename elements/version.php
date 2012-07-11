@@ -63,7 +63,7 @@ class JFormFieldVersion extends JFormField
 			$name    = $data['name'];
 
 			// The target to check against
-			$target = 'http://construct-framework.com/upgradecheck/bootstruct';
+			$target = 'http://construct-framework.com/upgradecheck/' . $name;
 
 			$curl = curl_init();
 			curl_setopt($curl, CURLOPT_URL, $target);
