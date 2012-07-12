@@ -28,59 +28,59 @@ if ($offLine) {
 }
 
 // Manually define layout and module counts
-$columnLayout		  = 'alpha-1-main-beta-1';
-$headerAboveClass	  = 'count-1';
-$headerBelowClass	  = 'count-6';
-$navBelowClass		 = 'count-4';
-$contentAboveClass	 = 'count-1';
-$contentBelowClass	 = '';
+$columnLayout          = 'alpha-1-main-beta-1';
+$headerAboveClass      = 'count-1';
+$headerBelowClass      = 'count-6';
+$navBelowClass         = 'count-4';
+$contentAboveClass     = 'count-1';
+$contentBelowClass     = '';
 $columnGroupAlphaClass = 'count-1';
 $columnGroupBetaClass  = '';
-$footerAboveClass	  = 'count-1';
+$footerAboveClass      = 'count-1';
 
 // Access template parameters
 $params = JFactory::getApplication()->getTemplate(true)->params;
 
-$customStyleSheet	  = $params->get('customStyleSheet');
-$detectTablets		 = $params->get('detectTablets');
-$enableSwitcher		= $params->get('enableSwitcher');
-$fluidMedia			= $params->get('fluidMedia');
-$fullWidth			 = $params->get('fullWidth');
-$googleWebFont		 = $params->get('googleWebFont');
+$customStyleSheet      = $params->get('customStyleSheet');
+$detectTablets         = $params->get('detectTablets');
+$enableSwitcher        = $params->get('enableSwitcher');
+$fluidMedia            = $params->get('fluidMedia');
+$fullWidth             = $params->get('fullWidth');
+$googleWebFont         = $params->get('googleWebFont');
 $googleWebFontTargets  = $params->get('googleWebFontTargets');
-$googleWebFont2		= $params->get('googleWebFont2');
+$googleWebFont2        = $params->get('googleWebFont2');
 $googleWebFontTargets2 = $params->get('googleWebFontTargets2');
-$googleWebFont3		= $params->get('googleWebFont3');
+$googleWebFont3        = $params->get('googleWebFont3');
 $googleWebFontTargets3 = $params->get('googleWebFontTargets3');
-$gridSystem			= $params->get('gridSystem');
-$IECSS3				= $params->get('IECSS3');
-$IECSS3Targets		 = $params->get('IECSS3Targets');
-$IE6TransFix		   = $params->get('IE6TransFix');
-$IE6TransFixTargets	= $params->get('IE6TransFixTargets');
-$inheritLayout		 = $params->get('inheritLayout');
-$inheritStyle		  = $params->get('inheritStyle');
-$loadMoo			   = $params->get('loadMoo');
-$loadModal			 = $params->get('loadModal');
-$loadjQuery			= $params->get('loadjQuery');
-$mContentDataTheme	 = $params->get('mContentDataTheme');
-$mdetect			   = $params->get('mdetect');
-$mFooterDataTheme	  = $params->get('mFooterDataTheme');
-$mHeaderDataTheme	  = $params->get('mHeaderDataTheme');
-$mNavPosition		  = $params->get('mNavPosition');
-$mNavDataTheme		 = $params->get('mNavDataTheme');
-$mPageDataTheme		= $params->get('mPageDataTheme');
-$setGeneratorTag	   = $params->get('setGeneratorTag');
-$showDiagnostics	   = $params->get('showDiagnostics');
-$siteWidth			 = $params->get('siteWidth');
-$siteWidthType		 = $params->get('siteWidthType');
-$siteWidthUnit		 = $params->get('siteWidthUnit');
-$stickyFooterHeight	= $params->get('stickyFooterHeight');
-$useStickyFooter	   = $params->get('useStickyFooter');
+$gridSystem            = $params->get('gridSystem');
+$IECSS3                = $params->get('IECSS3');
+$IECSS3Targets         = $params->get('IECSS3Targets');
+$IE6TransFix           = $params->get('IE6TransFix');
+$IE6TransFixTargets    = $params->get('IE6TransFixTargets');
+$inheritLayout         = $params->get('inheritLayout');
+$inheritStyle          = $params->get('inheritStyle');
+$loadMoo               = $params->get('loadMoo');
+$loadModal             = $params->get('loadModal');
+$loadjQuery            = $params->get('loadjQuery');
+$mContentDataTheme     = $params->get('mContentDataTheme');
+$mdetect               = $params->get('mdetect');
+$mFooterDataTheme      = $params->get('mFooterDataTheme');
+$mHeaderDataTheme      = $params->get('mHeaderDataTheme');
+$mNavPosition          = $params->get('mNavPosition');
+$mNavDataTheme         = $params->get('mNavDataTheme');
+$mPageDataTheme        = $params->get('mPageDataTheme');
+$setGeneratorTag       = $params->get('setGeneratorTag');
+$showDiagnostics       = $params->get('showDiagnostics');
+$siteWidth             = $params->get('siteWidth');
+$siteWidthType         = $params->get('siteWidthType');
+$siteWidthUnit         = $params->get('siteWidthUnit');
+$stickyFooterHeight    = $params->get('stickyFooterHeight');
+$useStickyFooter       = $params->get('useStickyFooter');
 
 // Render module positions
 $renderer = $doc->loadRenderer('modules');
-$raw	  = array('style' => 'raw');
-$xhtml	= array('style' => 'xhtml');
+$raw      = array('style' => 'raw');
+$xhtml    = array('style' => 'xhtml');
 $jexhtml  = array('style' => 'jexhtml');
 
 // Check for layout override
