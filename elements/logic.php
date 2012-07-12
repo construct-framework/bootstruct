@@ -469,9 +469,9 @@ if ($googleWebFont3) {
 $doc->addScript($template . '/js/bootstrap.min.js');
 
 //Quick port of Modernizer's method of replacing "no-js" HTML class with "js" - NOTE: removes all other classes added to HTML element
-$doc->addCustomTag('<script type="text/javascript">docElement = document.documentElement;docElement.className = docElement.className.replace(/\bno-js\b/, \'js\');</script>');
+$doc->addScriptDeclaration('docElement = document.documentElement;docElement.className = docElement.className.replace(/\bno-js\b/, \'js\');');
 
-$doc->addCustomTag('<script type="text/javascript">window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window);});</script>');
+$doc->addScriptDeclaration('window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window)});');
 if ($loadjQuery) {
 	$doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
 	$doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
@@ -484,7 +484,7 @@ if ($siteWidth) {
 if (($siteWidthType == 'max-width') && $fluidMedia) {
 	$doc->addStyleDeclaration('img, object {max-width:100%;}');
 }
-if (!$fullWidth) {
+if ($siteWidth && !$fullWidth) {
 	$doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
 }
 if ($useStickyFooter) {
