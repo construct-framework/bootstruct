@@ -232,8 +232,16 @@ footer .gutter {
 	min-height : 125px;
 }
 
-/* Login Form Tweaks */
+.sticky-footer #body-container {
+	padding-bottom : 175px;
+}
 
+.sticky-footer #footer {
+	margin-top : -175px;
+	height     : 175px;
+}
+
+/* Login Form Tweaks */
 #form-login-remember {
 	float   : left;
 	width   : 9em;
