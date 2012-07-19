@@ -251,8 +251,7 @@ footer .gutter {
 }
 
 /* Variable Width Sub-menus */
-
-ul.menu ul {
+#nav ul.menu ul {
 	width : auto;
 }
 
