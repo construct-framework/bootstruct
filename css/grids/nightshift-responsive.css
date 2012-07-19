@@ -79,6 +79,7 @@ body {
 
 	.main-beta-1 #load-first {
 		width : 81%;
+		float : left;
 	}
 
 	.main-beta-1 #column-group-beta {
@@ -102,6 +103,7 @@ body {
 
 	.alpha-1-main-beta-1 #load-first {
 		width : 81%;
+		float : left;
 	}
 
 	.alpha-1-main-beta-1 #content-main {
@@ -121,6 +123,7 @@ body {
 
 	.alpha-2-main-beta-1 #load-first {
 		width : 81%;
+		float : left;
 	}
 
 	.alpha-2-main-beta-1 #content-main {
