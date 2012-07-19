@@ -487,7 +487,7 @@ if (($siteWidthType == 'max-width') && $fluidMedia) {
 if ($siteWidth && !$fullWidth) {
 	$doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
 }
-if ($useStickyFooter) {
+if ($useStickyFooter && $stickyFooterHeight != '') {
 	$doc->addStyleDeclaration('.sticky-footer #body-container {padding-bottom:' . $stickyFooterHeight . 'px;}');
 	$doc->addStyleDeclaration('.sticky-footer #footer {margin-top:-' . $stickyFooterHeight . 'px;height:' . $stickyFooterHeight . 'px;}');
 }

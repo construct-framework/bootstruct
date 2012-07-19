@@ -280,7 +280,7 @@
 				</field>
 				<field name="stickyFooterHeight"
 					   type="text"
-					   default="175"
+					   default=""
 					   label="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_LABEL"
 					   description="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_DESC"
 					   size="5"/>
