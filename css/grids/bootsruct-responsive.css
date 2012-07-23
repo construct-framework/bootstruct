@@ -56,8 +56,18 @@ footer .gutter {
 	margin : 0 0 0 10px;
 }
 
+.navbar .navbar-inner {
+	-webkit-box-shadow : none;
+	-moz-box-shadow    : none;
+	box-shadow         : none;
+}
+
 .navbar .btn-navbar {
 	display : block;
+}
+
+#nav ul.menu li a, #nav ul.menu li span.separator {
+line-height: 1.6em;
 }
 
 /* end default styles */
@@ -234,7 +244,8 @@ footer .gutter {
 	#primary-nav {
 		position : absolute;
 		top      : 0;
-		left     : 25%;
+		right    : 0;
+		width    : 75%;
 	}
 
 }
