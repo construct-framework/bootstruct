@@ -112,7 +112,7 @@ $googleWebFontFamily3 = str_replace(array('+', ':bold', ':italic'), " ", $google
 // Get the name of the extended template override group
 $overrideTheme = str_replace(".css", "", $customStyleSheet);
 
-#----------------------------- Moldule Counts -----------------------------#
+#----------------------------- Module Counts -----------------------------#
 // from http://groups.google.com/group/joomla-dev-general/browse_thread/thread/b54f3f131dd173d
 
 $headerAboveCount1 = (int)($this->countModules('header-above-1') > 0);
