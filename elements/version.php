@@ -60,7 +60,7 @@ class JFormFieldVersion extends JFormField
 
 			// The module's version
 			$version = $data['version'];
-			$name    = str_replace(array('je-','-','construct','bootstruct','pro','community','core'),array(' ',' ','Construct','Bootstruct','Pro','Community','Core'), $data['name']);
+			$name    = str_replace(array('construct','bootstruct'),array('Construct','Bootstruct'), $data['name']);
 
 			// The target to check against
 			$target = 'http://construct-framework.com/upgradecheck/' . $data['name'];
