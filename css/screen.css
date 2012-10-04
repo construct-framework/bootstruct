@@ -845,7 +845,6 @@ ul.pagenav {
 #footer ul.menu li a,
 #footer ul.menu li a:visited {
 	font-weight     : normal;
-	padding         : 1px 3px;
 	text-decoration : none;
 }
 
