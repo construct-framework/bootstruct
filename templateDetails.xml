@@ -64,6 +64,8 @@
 
 	<positions>
 		<position>analytics</position>
+		<position>bottom-left</position>	
+		<position>bottom-right</position>
 		<position>breadcrumbs</position>
 		<position>column-1</position>
 		<position>column-2</position>
@@ -111,6 +113,8 @@
 		<position>nav-below-6</position>
 		<position>offline</position>
 		<position>syndicate</position>
+		<position>top-left</position>	
+		<position>top-right</position>
 	</positions>
 
 	<config>
@@ -371,12 +375,40 @@
 					<option value="e">Accent</option>
 				</field>
 			</fieldset>
+			<fieldset name="logo">
+				<field name="logo-type" type="list" default="image" label="TPL_CONSTRUCT5_LOGO_TYPE_LABEL" description="TPL_CONSTRUCT5_LOGO_TYPE_DESC">
+					<option value="text">Site Title</option>
+					<option value="image">Image</option>
+					<option value="menu">Logo in menu</option>
+				</field>
+				<field name="logo-image" type="media" label="TPL_CONSTRUCT5_LOGO_UPLOAD_LABEL" description="TPL_CONSTRUCT5_LOGO_UPLOAD_DESC" />
+				<field name="logo-slogan" type="text" default="" label="TPL_CONSTRUCT5_LOGO_SLOGAN_LABEL" description="TPL_CONSTRUCT5_LOGO_SLOGAN_DESC" filter="string" />
+				<field name="display-slogan" type="list" default="0" label="TPL_CONSTRUCT5_LOGO_TEXT_SLOGAN_LABEL" description="TPL_CONSTRUCT5_LOGO_TEXT_SLOGAN_DESC">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+			</fieldset>
 			<fieldset name="typography">
 				<field name="googleWebFont"
 					   type="googlewebfont"
 					   default=""
 					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
 					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+	   			<field name="googleWebFontSubset" 
+	   				   type="list" 
+	   				   default="latin" 
+	   				   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_LABEL" 
+	   				   description="TPL_CONSTRUCT5_GOOGLE_WEB_FONT_SUBSET_DESC">
+					   <option value="latin">Latin</option>
+					   <option value="latin-ext">Latin extended</option>
+					   <option value="cirrilic">Cirrilic</option>
+					   <option value="cirrilic-ext">Cirrilic extended</option>
+					   <option value="greek">Greek</option>
+					   <option value="greek-ext">Greek extended</option>
+					   <option value="khmer">Khmer</option>
+					   <option value="vietnamese">Vietnamese</option>
+				</field>
+
 				<field name="googleWebFontTargets"
 					   type="text"
 					   default=""
@@ -389,7 +421,20 @@
 					   default=""
 					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
 					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
-				<field name="googleWebFontTargets2"
+				<field name="googleWebFontSubset2" 
+	   				   type="list" 
+	   				   default="latin" 
+	   				   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_LABEL" 
+	   				   description="TPL_CONSTRUCT5_GOOGLE_WEB_FONT_SUBSET_DESC">
+					   <option value="latin">Latin</option>
+					   <option value="latin-ext">Latin extended</option>
+					   <option value="cirrilic">Cirrilic</option>
+					   <option value="cirrilic-ext">Cirrilic extended</option>
+					   <option value="greek">Greek</option>
+					   <option value="greek-ext">Greek extended</option>
+					   <option value="khmer">Khmer</option>
+					   <option value="vietnamese">Vietnamese</option>
+				</field>				<field name="googleWebFontTargets2"
 					   type="text"
 					   default=""
 					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
@@ -401,6 +446,20 @@
 					   default=""
 					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
 					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				<field name="googleWebFontSubset3" 
+	   				   type="list" 
+	   				   default="latin" 
+	   				   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_LABEL" 
+	   				   description="TPL_CONSTRUCT5_GOOGLE_WEB_FONT_SUBSET_DESC">
+					   <option value="latin">Latin</option>
+					   <option value="latin-ext">Latin extended</option>
+					   <option value="cirrilic">Cirrilic</option>
+					   <option value="cirrilic-ext">Cirrilic extended</option>
+					   <option value="greek">Greek</option>
+					   <option value="greek-ext">Greek extended</option>
+					   <option value="khmer">Khmer</option>
+					   <option value="vietnamese">Vietnamese</option>
+				</field>
 				<field name="googleWebFontTargets3"
 					   type="text"
 					   default=""
