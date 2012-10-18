@@ -37,10 +37,13 @@ $enableSwitcher          = $this->params->get('enableSwitcher');
 $fluidMedia              = $this->params->get('fluidMedia');
 $fullWidth               = $this->params->get('fullWidth');
 $googleWebFont           = $this->params->get('googleWebFont');
+$googleWebFontSubset	 = $this->params->get('googleWebFontSubset');
 $googleWebFontTargets    = htmlspecialchars($this->params->get('googleWebFontTargets'));
 $googleWebFont2          = $this->params->get('googleWebFont2');
+$googleWebFontSubset2	 = $this->params->get('googleWebFontSubset2');
 $googleWebFontTargets2   = htmlspecialchars($this->params->get('googleWebFontTargets2'));
 $googleWebFont3          = $this->params->get('googleWebFont3');
+$googleWebFontSubset3	 = $this->params->get('googleWebFontSubset3');
 $googleWebFontTargets3   = htmlspecialchars($this->params->get('googleWebFontTargets3'));
 $gridSystem              = $this->params->get('gridSystem');
 $IECSS3                  = $this->params->get('IECSS3');
@@ -193,26 +196,36 @@ if ($footerAboveCount) : $footerAboveClass = 'span' . strtr((12 / $footerAboveCo
 
 #------------------------------ Column Layout -----------------------------#
 
-$column1Count          = (int)($this->countModules('column-1') > 0);
-$column2Count          = (int)($this->countModules('column-2') > 0);
-$columnGroupAlphaCount = $column1Count + $column2Count;
+$top_left = (int) ($this->countModules('top-left') > 0);
+$column1Count = (int) ($this->countModules('column-1') > 0);
+$column2Count = (int) ($this->countModules('column-2') > 0);
+$bottom_left = (int) ($this->countModules('bottom-left') > 0);
 
-if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'span' . 12 / $columnGroupAlphaCount; endif;
+if ($top_left || $bottom_left) : $columnGroupAlphaCount = 2;
+else : $columnGroupAlphaCount = $column1Count + $column2Count;
+endif;
 
-$column3Count         = (int)($this->countModules('column-3') > 0);
-$column4Count         = (int)($this->countModules('column-4') > 0);
-$columnGroupBetaCount = $column3Count + $column4Count;
+if (($columnGroupAlphaCount == 2) || ($columnGroupAlphaCount == 1)) : $columnGroupAlphaClass = 'count-'.$columnGroupAlphaCount; endif;
 
-if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupBetaCount; endif;
+$top_right = (int) ($this->countModules('top-right') > 0);
+$column3Count = (int) ($this->countModules('column-3') > 0);
+$column4Count = (int) ($this->countModules('column-4') > 0);
+$bottom_right = (int) ($this->countModules('bottom-right') > 0);
 
-$columnLayout = 'main-only';
+if ($top_right || $bottom_right) : $columnGroupBetaCount = 2;
+else : $columnGroupBetaCount = $column3Count + $column4Count;
+endif;
 
-if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main';
+if (($columnGroupBetaCount == 2) || ($columnGroupBetaCount == 1)) : $columnGroupBetaClass = 'count-'.$columnGroupBetaCount; endif;
+
+$columnLayout= 'main-only';
+
+if (($columnGroupAlphaCount > 0 ) && ($columnGroupBetaCount == 0)) :
+	$columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main';
 elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
+	$columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main-beta-'.$columnGroupBetaCount;
 elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
-	$columnLayout = 'main-beta-' . $columnGroupBetaCount;
+	$columnLayout = 'main-beta-'.$columnGroupBetaCount;
 endif;
 
 #-------------------------------- Item ID ---------------------------------#
@@ -453,15 +466,15 @@ if ($enableSwitcher) {
 
 // Typography
 if ($googleWebFont) {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '');
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont . '&subset=' . $googleWebFontSubset . '');
 	$doc->addStyleDeclaration($googleWebFontTargets . ' {font-family:' . $googleWebFontFamily . ', serif;}');
 }
 if ($googleWebFont2) {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '');
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont2 . '&subset=' . $googleWebFontSubset2 . '');
 	$doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;}');
 }
 if ($googleWebFont3) {
-	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '');
+	$doc->addStyleSheet('http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '&subset=' . $googleWebFontSubset3 . '');
 	$doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;}');
 }
 
@@ -485,7 +498,7 @@ if (($siteWidthType == 'max-width') && $fluidMedia) {
 	$doc->addStyleDeclaration('img, object {max-width:100%;}');
 }
 if ($siteWidth && !$fullWidth) {
-	$doc->addStyleDeclaration('#header, #footer {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
+	$doc->addStyleDeclaration('#header, #footer, #body-container {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . '; margin:0 auto;}');
 }
 if ($useStickyFooter && $stickyFooterHeight != '') {
 	$doc->addStyleDeclaration('.sticky-footer #body-container {padding-bottom:' . $stickyFooterHeight . 'px;}');
@@ -499,3 +512,33 @@ if ($IECSS3) {
 	$doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
 }
 $doc->addCustomTag('<![endif]-->');
+
+// This does all the fun stuff that needs to happen for a good flexible logo.
+// Checking to see if new logo was uploaded. If so then use that. If not then use logo.png within the template image folder.
+$app = JFactory::getApplication();
+if ( $this->params->get('logo_image') ) {
+	$image_path = $this->params->get('logo_image', '');
+} else {
+	$image_path = "templates/" . $app->getTemplate() . '/images/logo.png';
+	$display = 'display: block;';
+}
+// Automatically detect image size of uploaded image
+$image_size = getimagesize($image_path);
+$image_width = $image_size[0];
+$image_height = $image_size[1];
+$tag_style = 'width:100%;';
+$link_style = 'background: url(\'' . $image_path . '\') no-repeat; width:' . $image_width . 'px; width:100%; max-height:' . $image_height . 'px;' . $display;
+// Pull in tagline if it's set. If it's not suppose to be visible then hide the tagline by positioning it off of the page.
+if ( ( $this->params->get('display-tagline') ) && ( $this->params->get('logo-tagline') ) ) {
+	$tagline = '<span class="logo-tagline">' . $this->params->get('logo-tagline', '') . '</span>' ;
+} else {
+	$tagline = '';
+}
+// Output the logo. Determine whether it's text or an image, then pull in all the values set previously to display properly.
+if ( $this->params->get('logo-type') == 'text' ) {
+$logo = '<' . $tag . ' class="logo ' . $this->params->get('logo-type') . '" ><a href="' . $app->getCfg('live_site') . '" class="brand">' . $app->getCfg('sitename') . '</a>' . $tagline . '</' . $tag . '>';
+} elseif ( $this->params->get('logo-type') == 'menu' ) {
+$logo = '';
+} else {
+$logo = '<' . $tag . ' style="' . $tag_style . '" class="logo ' . $this->params->get('logo-type') . '" ><a href="' . $app->getCfg('live_site') . '" style="' . $link_style . '" class="brand"></a>' . $tagline . '</' . $tag . '>';
+}
