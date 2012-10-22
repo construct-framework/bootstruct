@@ -365,41 +365,69 @@ elseif ($results) {
 
     <?php if ($columnGroupAlphaCount) : ?>
     <div id="column-group-alpha" class="clearfix">
-        <?php if ($this->countModules('column-1')) : ?>
-        <div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
-            <div class="gutter clearfix">
-                <jdoc:include type="modules" name="column-1" style="div" />
-            </div>
-        </div>
-        <?php endif ?>
-        <?php if ($this->countModules('column-2')) : ?>
-        <div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
-            <div class="gutter clearfix">
-                <jdoc:include type="modules" name="column-2" style="div" />
-            </div>
-        </div>
-        <?php endif ?>
+    	<?php if ($this->countModules('top-left')) : ?>
+    		<div id="top-left">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="top-left" style="div" />
+    			</div><!--end gutter -->
+    		</div><!-- end column-2 -->								
+    	<?php endif; ?>
+    	<?php if ($this->countModules('column-1')) : ?>
+    		<div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="column-1" style="div" />
+    			</div>
+    		</div>
+    	<?php endif ?>
+    	<?php if ($this->countModules('column-2')) : ?>
+    		<div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="column-2" style="div" />
+    			</div>
+    		</div>
+    	<?php endif ?>
+    	<?php if ($this->countModules('bottom-left')) : ?>
+    		<div id="bottom-left">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="bottom-left" style="div" />
+    			</div><!--end gutter -->
+    		</div><!-- end column-2 -->								
+    	<?php endif; ?>
+
     </div>
     <?php endif ?>
 
 </div>
 
     <?php if ($columnGroupBetaCount) : ?>
-<div id="column-group-beta" class="clearfix">
-    <?php if ($this->countModules('column-3')) : ?>
-    <div id="column-3" class="<?php echo $columnGroupBetaClass ?>">
-        <div class="gutter clearfix">
-            <jdoc:include type="modules" name="column-3" style="div" />
-        </div>
-    </div>
-    <?php endif ?>
-    <?php if ($this->countModules('column-4')) : ?>
-    <div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
-        <div class="gutter clearfix">
-            <jdoc:include type="modules" name="column-4" style="div" />
-        </div>
-    </div>
-    <?php endif ?>
+    	<?php if ($this->countModules('top-right')) : ?>
+    		<div id="top-right">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="top-right" style="div" />
+    			</div><!--end gutter -->
+    		</div><!-- end column-2 -->								
+    	<?php endif; ?>
+    	<?php if ($this->countModules('column-3')) : ?>
+    		<div id="column-3" class="<?php echo $columnGroupBetaClass ?>">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="column-3" style="div" />
+    			</div><!--end gutter -->
+    		</div><!-- end column-2 -->								
+    	<?php endif; ?>
+    	<?php if ($this->countModules('column-4')) : ?>
+    		<div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="column-4" style="div" />
+    			</div><!--end gutter -->
+    		</div><!-- end column-4 -->
+    	<?php endif; ?>
+    	<?php if ($this->countModules('bottom-right')) : ?>
+    		<div id="bottom-right">
+    			<div class="gutter clearfix">
+    				<jdoc:include type="modules" name="bottom-right" style="div" />
+    			</div><!--end gutter -->
+    		</div><!-- end column-2 -->								
+    	<?php endif; ?>
 </div>
     <?php endif ?>
 
