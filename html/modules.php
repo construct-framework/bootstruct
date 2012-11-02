@@ -31,14 +31,14 @@ function modChrome_div($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <div <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </div>
@@ -49,14 +49,14 @@ function modChrome_aside($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <aside <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </aside>
@@ -67,14 +67,14 @@ function modChrome_figure($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <figure <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </figure>
@@ -85,14 +85,14 @@ function modChrome_footer($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <footer <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </footer>
@@ -103,14 +103,14 @@ function modChrome_header($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <header <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </header>
@@ -121,14 +121,14 @@ function modChrome_nav($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <nav <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </nav>
@@ -139,14 +139,14 @@ function modChrome_section($module, $params, $attribs)
 {
 	$id          = isset($attribs['id']) ? $attribs['id'] : NULL;
 	$headerLevel = isset($attribs['level']) ? (int)$attribs['level'] : 3;
-	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : 'je-header';
+	$headerClass = isset($attribs['header-class']) ? $attribs['header-class'] : NULL;
 	$moduleClass = isset($attribs['module-class']) ? $attribs['module-class'] : NULL;
 	$moduleTitle = dynamicMenuTitle($module, $params);
 
 	if (!empty($module->content)) : ?>
     <section <?php if ($id) echo 'id="' . $id . '"'; ?> class="moduletable<?php echo $params->get('moduleclass_sfx') ?><?php if ($moduleClass) echo ' ' . $moduleClass ?>">
 		<?php if ($module->showtitle) : ?>
-                <h<?php echo $headerLevel ?> class="<?php echo $headerClass ?>"><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
+                <h<?php echo $headerLevel ?> <?php if ($headerClass) echo 'class="' . $headerClass . '"' ?>><?php echo $moduleTitle ?><?php echo '</h' . $headerLevel ?>>
 		<?php endif ?>
 		<?php echo $module->content ?>
     </section>
