@@ -38,3 +38,7 @@ Thumbs.db
 # File List #
 #############
 build.sh
+
+# IDE #
+#######
+.idea
