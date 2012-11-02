@@ -82,13 +82,6 @@
 <header id="header" class="clear clearfix">
 	<div class="gutter clearfix">
 
-		<div class="date-container">
-			<span class="date-weekday"><?php    $now = JFactory::getDate(); echo $now->toFormat('%A') . ',' ?></span>
-			<span class="date-month"><?php         $now = JFactory::getDate(); echo $now->toFormat('%B') ?></span>
-			<span class="date-day"><?php         $now = JFactory::getDate(); echo $now->toFormat('%d') . ',' ?></span>
-			<span class="date-year"><?php         $now = JFactory::getDate(); echo $now->toFormat('%Y') ?></span>
-		</div>
-
 		<?php if ($showDiagnostics) : ?>
 		<ul id="diagnostics">
 			<li>layout override</li>
@@ -138,17 +131,6 @@
 				<?php endif ?>
 			</ul>
 		</nav>
-
-		<?php if ($enableSwitcher) : ?>
-		<ul id="style-switch">
-			<li><a href="#" onclick="setActiveStyleSheet('wireframe'); return false;" title="Wireframe">Wireframe</a>
-			</li>
-			<li>
-				<a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a>
-			</li>
-			<li><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
-		</ul>
-		<?php endif ?>
 
 	</div>
 </header>

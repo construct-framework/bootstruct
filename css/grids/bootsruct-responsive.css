@@ -13,20 +13,11 @@
 		content : "under 40em - ";
 	}/* end diagnostic code */
 
-body {
-	font-size : 76%;
-}
-
 #body-container,
 #header-above {
 	margin  : 0 auto;
 	padding : 0;
 }
-
-/*#load-first,
-#footer-above {
-	float : left;
-}*/
 
 #footer-above {
 	width : 100%;
@@ -56,18 +47,8 @@ footer .gutter {
 	margin : 0 0 0 10px;
 }
 
-.navbar .navbar-inner {
-	-webkit-box-shadow : none;
-	-moz-box-shadow    : none;
-	box-shadow         : none;
-}
-
 .navbar .btn-navbar {
 	display : block;
-}
-
-#nav ul.menu li a, #nav ul.menu li span.separator {
-line-height: 1.6em;
 }
 
 /* end default styles */

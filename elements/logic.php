@@ -32,8 +32,6 @@ $view = JRequest::getCmd('view');
 // Define shortcuts for template parameters
 $customStyleSheet        = $this->params->get('customStyleSheet');
 $customStyleSheetVersion = htmlspecialchars($this->params->get('customStyleSheetVersion'));
-$detectTablets           = $this->params->get('detectTablets');
-$enableSwitcher          = $this->params->get('enableSwitcher');
 $fluidMedia              = $this->params->get('fluidMedia');
 $fullWidth               = $this->params->get('fullWidth');
 $googleWebFont           = $this->params->get('googleWebFont');
@@ -43,22 +41,8 @@ $googleWebFontTargets2   = htmlspecialchars($this->params->get('googleWebFontTar
 $googleWebFont3          = $this->params->get('googleWebFont3');
 $googleWebFontTargets3   = htmlspecialchars($this->params->get('googleWebFontTargets3'));
 $gridSystem              = $this->params->get('gridSystem');
-$IECSS3                  = $this->params->get('IECSS3');
-$IECSS3Targets           = htmlspecialchars($this->params->get('IECSS3Targets'));
-$IE6TransFix             = $this->params->get('IE6TransFix');
-$IE6TransFixTargets      = htmlspecialchars($this->params->get('IE6TransFixTargets'));
 $inheritLayout           = $this->params->get('inheritLayout');
 $inheritStyle            = $this->params->get('inheritStyle');
-$loadMoo                 = $this->params->get('loadMoo');
-$loadModal               = $this->params->get('loadModal');
-$loadjQuery              = $this->params->get('loadjQuery');
-$mContentDataTheme       = $this->params->get('mContentDataTheme');
-$mdetect                 = $this->params->get('mdetect');
-$mFooterDataTheme        = $this->params->get('mFooterDataTheme');
-$mHeaderDataTheme        = $this->params->get('mHeaderDataTheme');
-$mNavPosition            = $this->params->get('mNavPosition');
-$mNavDataTheme           = $this->params->get('mNavDataTheme');
-$mPageDataTheme          = $this->params->get('mPageDataTheme');
 $setGeneratorTag         = htmlspecialchars($this->params->get('setGeneratorTag'));
 $showDiagnostics         = $this->params->get('showDiagnostics');
 $siteWidth               = htmlspecialchars($this->params->get('siteWidth'));
@@ -66,11 +50,6 @@ $siteWidthType           = $this->params->get('siteWidthType');
 $siteWidthUnit           = $this->params->get('siteWidthUnit');
 $stickyFooterHeight      = htmlspecialchars($this->params->get('stickyFooterHeight'));
 $useStickyFooter         = $this->params->get('useStickyFooter');
-
-// Define absolute paths to files
-$mdetectFile        = $templateDir . '/elements/mdetect.php';
-$mTemplate          = $templateDir . '/mobile.php';
-$alternatemTemplate = $templateDir . '/layouts/mobile.php';
 
 // Get the template's XML for versioning
 $xmlfile = $templateDir . '/templateDetails.xml';
@@ -84,25 +63,6 @@ if ($customStyleSheetVersion == '') {
 
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
-
-// Enable Mootols
-if ($loadMoo) {
-	JHtml::_('behavior.framework', true);
-}
-
-// Enable modal pop-ups
-if ($loadMoo && $loadModal) {
-	JHtml::_('behavior.modal');
-}
-
-// Remove MooTools if set to no.
-if (!$loadMoo) {
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
-	unset($doc->_scripts[$this->baseurl . '/media/system/js/modal.js']);
-}
 
 // Change Google Web Font name for CSS
 $googleWebFontFamily  = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont);
@@ -426,9 +386,8 @@ $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
 $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-icon');
 
 // Style sheets
-$doc->addStyleSheet($template . '/css/bootstrap.min.css?' . $version, 'text/css', 'screen');
-$doc->addStyleSheet($template . '/css/screen.css?' . $version, 'text/css', 'screen');
-$doc->addStyleSheet($template . '/css/print.css?' . $version, 'text/css', 'print');
+$doc->addStyleSheet('media/jui/css/bootstrap.min.css', 'text/css', 'screen');
+//$doc->addStyleSheet($template . '/css/screen.css?' . $version, 'text/css', 'screen');
 if ($gridSystem != '-1') {
 	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
@@ -442,13 +401,6 @@ if ($this->direction == 'rtl') {
 $cssFile = $styleOverride->getIncludeFile();
 if ($cssFile) {
 	$doc->addStyleSheet($cssFile . '?' . $version, 'text/css', 'screen');
-}
-
-// Style sheet switcher
-if ($enableSwitcher) {
-	$doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/diagnostic.css" type="text/css" media="screen" title="diagnostic" />');
-	$doc->addCustomTag('<link rel="alternate stylesheet" href="' . $template . '/css/wireframe.css" type="text/css" media="screen" title="wireframe" />');
-	$doc->addScript($template . '/js/styleswitch.js');
 }
 
 // Typography
@@ -466,16 +418,7 @@ if ($googleWebFont3) {
 }
 
 // JavaScript
-$doc->addScript($template . '/js/bootstrap.min.js');
-
-//Quick port of Modernizer's method of replacing "no-js" HTML class with "js" - NOTE: removes all other classes added to HTML element
-$doc->addScriptDeclaration('docElement = document.documentElement;docElement.className = docElement.className.replace(/\bno-js\b/, \'js\');');
-
-$doc->addScriptDeclaration('window.addEvent(\'domready\',function(){new SmoothScroll({duration:1200},window)});');
-if ($loadjQuery) {
-	$doc->addCustomTag('<script type="text/javascript" src="' . $loadjQuery . '"></script>');
-	$doc->addCustomTag('<script type="text/javascript">jQuery.noConflict();</script>');
-}
+$doc->addScript($template . 'media/jui/js/bootstrap.min.js');
 
 // Layout Declarations
 if ($siteWidth) {
@@ -495,7 +438,4 @@ if ($useStickyFooter && $stickyFooterHeight != '') {
 // Internet Explorer Fixes
 $doc->addCustomTag('<!--[if lt IE 9]>');
 $doc->addCustomTag('<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>');
-if ($IECSS3) {
-	$doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
-}
 $doc->addCustomTag('<![endif]-->');

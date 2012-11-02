@@ -2,13 +2,13 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="2.5" type="template" client="site" method="upgrade">
 	<name>bootstruct</name>
-	<creationDate>June 26, 2012</creationDate>
+	<creationDate>Nov 2, 2012</creationDate>
 	<author>Matt Thomas</author>
 	<authorEmail>support@construct-framework.com</authorEmail>
 	<authorUrl>http://construct-framework.com</authorUrl>
 	<copyright>Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>2.5.1</version>
+	<version>3.0.0</version>
 	<description>TPL_BOOTSTRUCT_DESCRIPTION</description>
 	<files>
 		<filename>css/article/index.html</filename>
@@ -22,7 +22,6 @@
 		<filename>css/diagnostic.css</filename>
 		<filename>css/editor.css</filename>
 		<filename>css/index.html</filename>
-		<filename>css/mobile.css</filename>
 		<filename>css/modal.css</filename>
 		<filename>css/print.css</filename>
 		<filename>css/rtl.css</filename>
@@ -31,9 +30,7 @@
 		<filename>elements/googlewebfont.php</filename>
 		<filename>elements/helper.php</filename>
 		<filename>elements/index.html</filename>
-		<filename>elements/jqueryversion.php</filename>
 		<filename>elements/logic.php</filename>
-		<filename>elements/mdetect.php</filename>
 		<filename>elements/version.php</filename>
 		<folder>html</folder>
 		<filename>images/index.html</filename>
@@ -41,7 +38,6 @@
 		<filename>images/trans.gif</filename>
 		<filename>js/index.html</filename>
 		<filename>js/PIE.htc</filename>
-		<filename>js/styleswitch.js</filename>
 		<folder>language</folder>
 		<filename>layouts/index.html</filename>
 		<filename>layouts/article/index.html</filename>
@@ -55,8 +51,6 @@
 		<filename>favicon.png</filename>
 		<filename>index.html</filename>
 		<filename>index.php</filename>
-		<filename>mobile.php</filename>
-		<filename>mobile-offline.php</filename>
 		<filename>modal.php</filename>
 		<filename>offline.php</filename>
 		<filename>templateDetails.xml</filename>
@@ -116,14 +110,6 @@
 	<config>
 		<fields name="params">
 			<fieldset name="general" addfieldpath="/templates/bootstruct/elements">
-				<field name="enableSwitcher"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_ENABLE_SWITCHER_LABEL"
-					   description="TPL_BOOTSTRUCT_ENABLE_SWITCHER_DESC">
-					<option value="1">Show</option>
-					<option value="0">Hide</option>
-				</field>
 				<field name="showDiagnostics"
 					   type="radio"
 					   default="0"
@@ -174,61 +160,6 @@
 					   label="Generator Meta Tag"
 					   description="Customize the generator meta tag output by your template."
 					   size="56"/>
-			</fieldset>
-			<fieldset name="IE">
-				<field name="IECSS3"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_IE_CSS3_LABEL"
-					   description="TPL_BOOTSTRUCT_IE_CSS3_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
-				<field name="IECSS3Targets"
-					   type="textarea"
-					   default=".drop-shadow, .outline, .rounded, ul.menu li"
-					   label="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_DESC"
-					   rows="5"
-					   cols="50"/>
-				<field name="IE6TransFix"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_IE6_TRANS_FIX_LABEL"
-					   description="TPL_BOOTSTRUCT_IE6_TRANS_FIX_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
-				<field name="IE6TransFixTargets"
-					   type="textarea"
-					   default="h1 a"
-					   label="TPL_BOOTSTRUCT_IE6_TRANS_FIX_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_IE6_TRANS_FIX_TARGETS_DESC"
-					   rows="5"
-					   cols="50"/>
-			</fieldset>
-			<fieldset name="javascript">
-				<field name="loadMoo"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_LOAD_MOO_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_MOO_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
-				<field name="loadModal"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_LOAD_MODAL_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_MODAL_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
-				<field name="loadjQuery"
-					   type="jqueryversion"
-					   default=""
-					   label="TPL_BOOTSTRUCT_LOAD_JQUERY_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_JQUERY_DESC"/>
 			</fieldset>
 			<fieldset name="Layout">
 				<field name="siteWidth"
@@ -284,92 +215,6 @@
 					   label="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_LABEL"
 					   description="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_DESC"
 					   size="5"/>
-			</fieldset>
-			<fieldset name="mobile">
-				<field name="mdetect"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_MDETECT_LABEL"
-					   description="TPL_BOOTSTRUCT_MDETECT_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
-				<field name="detectTablets"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_DETECT_TABLETS_LABEL"
-					   description="TPL_BOOTSTRUCT_DETECT_TABLETS_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
-				<field name="mNavPosition"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_MNAVPOSITION_LABEL"
-					   description="TPL_BOOTSTRUCT_MNAVPOSITION_DESC">
-					<option value="1">Before Content</option>
-					<option value="0">After Content</option>
-				</field>
-				<field name="mPageDataTheme"
-					   type="list"
-					   default="b"
-					   label="TPL_BOOTSTRUCT_MPAGEDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MPAGEDATATHEME_DESC">
-					<option value="">- None Selected -</option>
-					<option value="a">Black</option>
-					<option value="b">Blue</option>
-					<option value="c">Gray</option>
-					<option value="d">Dark Gray</option>
-					<option value="e">Accent</option>
-				</field>
-				<field name="mHeaderDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MHEADERDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MHEADERDATATHEME_DESC">
-					<option value="">- None Selected -</option>
-					<option value="a">Black</option>
-					<option value="b">Blue</option>
-					<option value="c">Gray</option>
-					<option value="d">Dark Gray</option>
-					<option value="e">Accent</option>
-				</field>
-				<field name="mNavDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MNAVDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MNAVDATATHEME_DESC">
-					<option value="">- None Selected -</option>
-					<option value="a">Black</option>
-					<option value="b">Blue</option>
-					<option value="c">Gray</option>
-					<option value="d">Dark Gray</option>
-					<option value="e">Accent</option>
-				</field>
-				<field name="mContentDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MCONTENTDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MCONTENTDATATHEME_DESC">
-					<option value="">- None Selected -</option>
-					<option value="a">Black</option>
-					<option value="b">Blue</option>
-					<option value="c">Gray</option>
-					<option value="d">Dark Gray</option>
-					<option value="e">Accent</option>
-				</field>
-				<field name="mFooterDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MFOOTERDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MFOOTERDATATHEME_DESC">
-					<option value="">- None Selected -</option>
-					<option value="a">Black</option>
-					<option value="b">Blue</option>
-					<option value="c">Gray</option>
-					<option value="d">Dark Gray</option>
-					<option value="e">Accent</option>
-				</field>
 			</fieldset>
 			<fieldset name="typography">
 				<field name="googleWebFont"

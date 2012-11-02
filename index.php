@@ -16,30 +16,10 @@ if (JFile::exists($logicFile)) {
     include $logicFile;
 }
 
-// Mobile device detection
-if (JFile::exists($mdetectFile)) {
-    include_once $mdetectFile;
-    // Instantiate the mobile object class
-    $uagent_obj = new uagent_info();
-    $isMobile = $uagent_obj->DetectMobileLong();
-    $isTablet = $uagent_obj->DetectTierTablet();
-}
-
 // Layout override
 $results = $layoutOverride->getIncludeFile();
 
-// Check if mobile device has opted for desktop version
-if (isset($_GET['viewDesktop'])) {
-    $_SESSION['viewDesktop'] = $_GET['viewDesktop'];
-}
-
-// Check if mobile device detection is turned on and, test if visitor is a mobile device, and if so, load mobile sub-template
-if ((($mdetect && $isMobile) || ($mdetect && $detectTablets && $isTablet)) && (!isset($_SESSION['viewDesktop']))) {
-    if (JFile::exists($mTemplate)) {
-        include_once $mTemplate;
-    }
-} // Check for layout override
-elseif ($results) {
+if ($results) {
     $alternateIndexFile = $results;
     include_once $alternateIndexFile;
 } else {
@@ -100,13 +80,6 @@ elseif ($results) {
 <header id="header" class="clear clearfix">
     <div class="gutter clearfix">
 
-        <div class="date-container">
-            <span class="date-weekday"><?php    $now = JFactory::getDate(); echo $now->toFormat('%A') . ',' ?></span>
-            <span class="date-month"><?php         $now = JFactory::getDate(); echo $now->toFormat('%B') ?></span>
-            <span class="date-day"><?php         $now = JFactory::getDate(); echo $now->toFormat('%d') . ',' ?></span>
-            <span class="date-year"><?php         $now = JFactory::getDate(); echo $now->toFormat('%Y') ?></span>
-        </div>
-
         <?php if ($showDiagnostics) : ?>
         <ul id="diagnostics">
             <li>column layout <?php echo $columnLayout ?></li>
@@ -159,17 +132,6 @@ elseif ($results) {
                 <?php endif ?>
             </ul>
         </nav>
-
-        <?php if ($enableSwitcher) : ?>
-        <ul id="style-switch">
-            <li><a href="#" onclick="setActiveStyleSheet('wireframe'); return false;" title="Wireframe">Wireframe</a>
-            </li>
-            <li>
-                <a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a>
-            </li>
-            <li><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
-        </ul>
-        <?php endif ?>
 
     </div>
 </header>
