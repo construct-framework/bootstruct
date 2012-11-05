@@ -43,6 +43,9 @@ $googleWebFontTargets3   = htmlspecialchars($this->params->get('googleWebFontTar
 $gridSystem              = $this->params->get('gridSystem');
 $inheritLayout           = $this->params->get('inheritLayout');
 $inheritStyle            = $this->params->get('inheritStyle');
+$loadMoo                 = $this->params->get('loadMoo');
+$loadModal               = $this->params->get('loadModal');
+$mooExceptions           = htmlspecialchars($this->params->get('mooExceptions'));
 $setGeneratorTag         = htmlspecialchars($this->params->get('setGeneratorTag'));
 $showDiagnostics         = $this->params->get('showDiagnostics');
 $siteWidth               = htmlspecialchars($this->params->get('siteWidth'));
@@ -63,6 +66,31 @@ if ($customStyleSheetVersion == '') {
 
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
+
+// Current component Name
+$currentComponent = JRequest::getCmd('option');
+
+// Turn $mooExceptions into an array, remove spaces from input
+$mooExceptions = explode(',', str_replace(' ', '', $mooExceptions));
+
+// Enable Mootols
+if ($loadMoo) {
+	JHtml::_('behavior.framework', TRUE);
+}
+
+// Enable modal pop-ups
+if ($loadMoo && $loadModal) {
+	JHtml::_('behavior.modal');
+}
+
+// Remove MooTools if set to no.
+if (!$loadMoo && !in_array($currentComponent, $mooExceptions)) {
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-core.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/mootools-more.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
+	unset($doc->_scripts[$this->baseurl . '/media/system/js/modal.js']);
+}
 
 // Change Google Web Font name for CSS
 $googleWebFontFamily  = str_replace(array('+', ':bold', ':italic'), " ", $googleWebFont);
@@ -168,10 +196,8 @@ if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupB
 $columnLayout = 'main-only';
 
 if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main';
-elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount;
-elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main'; elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount; elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
 	$columnLayout = 'main-beta-' . $columnGroupBetaCount;
 endif;
 
@@ -194,13 +220,11 @@ function getSection($id)
 		return NULL;
 	} elseif (JRequest::getCmd('view', 0) == "section") {
 		return $id;
-	}
-	elseif (JRequest::getCmd('view', 0) == "category") {
+	} elseif (JRequest::getCmd('view', 0) == "category") {
 		$sql = "SELECT section FROM #__categories WHERE id = $id ";
 		$database->setQuery($sql);
 		return $database->loadResult();
-	}
-	elseif (JRequest::getCmd('view', 0) == "article") {
+	} elseif (JRequest::getCmd('view', 0) == "article") {
 		$temp = explode(":", $id);
 		$sql  = "SELECT sectionid FROM #__content WHERE id = " . $temp[0];
 		$database->setQuery($sql);
@@ -216,11 +240,10 @@ function getCategory($id)
 {
 	$database = JFactory::getDBO();
 	if (JRequest::getCmd('view', 0) == "section") {
-		return null;
+		return NULL;
 	} elseif ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
 		return $id;
-	}
-	elseif (JRequest::getCmd('view', 0) == "article") {
+	} elseif (JRequest::getCmd('view', 0) == "article") {
 		$temp = explode(":", $id);
 		$sql  = "SELECT catid FROM #__content WHERE id = " . $temp[0];
 		$database->setQuery($sql);
@@ -418,7 +441,8 @@ if ($googleWebFont3) {
 }
 
 // JavaScript
-$doc->addScript($template . 'media/jui/js/bootstrap.min.js');
+$doc->addScript('media/jui/js/jquery.js');
+$doc->addScript('media/jui/js/bootstrap.min.js');
 
 // Layout Declarations
 if ($siteWidth) {

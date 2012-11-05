@@ -161,6 +161,24 @@
 					   description="Customize the generator meta tag output by your template."
 					   size="56"/>
 			</fieldset>
+			<fieldset name="javascript">
+				<field name="loadMoo"
+					   type="radio"
+					   default="1"
+					   label="TPL_BOOTSTRUCT_LOAD_MOO_LABEL"
+					   description="TPL_BOOTSTRUCT_LOAD_MOO_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="loadModal"
+					   type="radio"
+					   default="1"
+					   label="TPL_BOOTSTRUCT_LOAD_MODAL_LABEL"
+					   description="TPL_BOOTSTRUCT_LOAD_MODAL_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+			</fieldset>
 			<fieldset name="Layout">
 				<field name="siteWidth"
 					   type="text"
