@@ -42,8 +42,6 @@ $footerAboveClass      = 'count-1';
 $params = JFactory::getApplication()->getTemplate(true)->params;
 
 $customStyleSheet      = $params->get('customStyleSheet');
-$detectTablets         = $params->get('detectTablets');
-$enableSwitcher        = $params->get('enableSwitcher');
 $fluidMedia            = $params->get('fluidMedia');
 $fullWidth             = $params->get('fullWidth');
 $googleWebFont         = $params->get('googleWebFont');
@@ -55,20 +53,9 @@ $googleWebFontTargets3 = $params->get('googleWebFontTargets3');
 $gridSystem            = $params->get('gridSystem');
 $IECSS3                = $params->get('IECSS3');
 $IECSS3Targets         = $params->get('IECSS3Targets');
-$IE6TransFix           = $params->get('IE6TransFix');
-$IE6TransFixTargets    = $params->get('IE6TransFixTargets');
 $inheritLayout         = $params->get('inheritLayout');
 $inheritStyle          = $params->get('inheritStyle');
 $loadMoo               = $params->get('loadMoo');
-$loadModal             = $params->get('loadModal');
-$loadjQuery            = $params->get('loadjQuery');
-$mContentDataTheme     = $params->get('mContentDataTheme');
-$mdetect               = $params->get('mdetect');
-$mFooterDataTheme      = $params->get('mFooterDataTheme');
-$mHeaderDataTheme      = $params->get('mHeaderDataTheme');
-$mNavPosition          = $params->get('mNavPosition');
-$mNavDataTheme         = $params->get('mNavDataTheme');
-$mPageDataTheme        = $params->get('mPageDataTheme');
 $setGeneratorTag       = $params->get('setGeneratorTag');
 $showDiagnostics       = $params->get('showDiagnostics');
 $siteWidth             = $params->get('siteWidth');
@@ -103,10 +90,6 @@ if (JFile::exists($template . '/layouts/error.php')) {
 	<link rel="icon" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/favicon.png" type="image/png" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/css/screen.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/css/print.css" type="text/css" media="print" />
-	<?php if ($enableSwitcher) {
-	echo '  <link rel="alternate stylesheet" href="templates/' . $this->template . '/css/diagnostic.css" type="text/css" title="diagnostic"/>
-  <link rel="alternate stylesheet" href="templates/' . $this->template . '/css/wireframe.css" type="text/css" title="wireframe"/>';
-} ?>
 	<?php
 	if ($customStyleSheet > -1)
 		echo '<link rel="stylesheet" href="' . $this->baseurl . '/templates/' . $this->template . '/css/' . $customStyleSheet . '"  type="text/css" media="screen" />';
@@ -136,21 +119,6 @@ if (JFile::exists($template . '/layouts/error.php')) {
 	if (($siteWidthType == 'max-width') && $fluidMedia)
 		echo '<style type="text/css"> img, object {max-width:100%}</style>';
 	?>
-	<script type="text/javascript">window.addEvent('domready', function () {
-		new SmoothScroll({duration:1200}, window);
-	});</script>
-	<!--[if lt IE 7]>
-		<?php if ($IE6TransFix) {
-		echo '  <script type="text/javascript" src="' . $this->baseurl . '/templates/' . $this->template . '/js/DD_belatedPNG_0.0.8a-min.js"></script>
-  <script>DD_belatedPNG.fix(\'' . $IE6TransFixTargets . '\');</script>' . "\n";
-	} ?>
-	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/css/ie6.css" type="text/css" media="screen" />
-	<style type="text/css">
-	body {text-align: center}
-	#body-container {text-align : left;}
-	#body-container <?php if (!$fullWidth) echo ',#header, #footer '?>{width: expression( document.body.clientWidth > <?php echo ($siteWidth - 1) ?> ? "<?php echo $siteWidth . $siteWidthUnit ?>" : "auto" );margin : 0 auto;}
-	 </style>
-	<![endif]-->
 	<?php if ($useStickyFooter) {
 	echo '  <style type="text/css">.sticky-footer #body-container{padding-bottom:' . $stickyFooterHeight . 'px;}
   .sticky-footer #footer{margin-top:-' . $stickyFooterHeight . 'px;height:' . $stickyFooterHeight . 'px;}
@@ -195,13 +163,6 @@ if (JFile::exists($template . '/layouts/error.php')) {
 <header id="header" class="clear clearfix">
 	<div class="gutter">
 
-		<div class="date-container">
-			<span class="date-weekday"><?php	$now = JFactory::getDate(); echo $now->toFormat('%A') . ',' ?></span>
-			<span class="date-month"><?php		 $now = JFactory::getDate(); echo $now->toFormat('%B') ?></span>
-			<span class="date-day"><?php		 $now = JFactory::getDate(); echo $now->toFormat('%d') . ',' ?></span>
-			<span class="date-year"><?php		 $now = JFactory::getDate(); echo $now->toFormat('%Y') ?></span>
-		</div>
-
 		<h1 id="logo">
 			<a href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo $this->baseurl ?></a>
 		</h1>
@@ -213,22 +174,9 @@ if (JFile::exists($template . '/layouts/error.php')) {
 				<li>Jump to:</li>
 				<li><a href="<?php echo $this->baseurl ?>/index.php#content" class="to-content">Content</a></li>
 				<li><a href="<?php echo $this->baseurl ?>/index.php#nav" class="to-nav">Navigation</a></li>
-				<li>
-					<a href="<?php echo $this->baseurl ?>/index.php#additional" class="to-additional">Additional Information</a>
-				</li>
+				<li><a href="<?php echo $this->baseurl ?>/index.php#additional" class="to-additional">Additional Information</a></li>
 			</ul>
 		</nav>
-
-		<?php if ($enableSwitcher) : ?>
-		<ul id="style-switch">
-			<li><a href="#" onclick="setActiveStyleSheet('wireframe'); return false;" title="Wireframe">Wireframe</a>
-			</li>
-			<li>
-				<a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a>
-			</li>
-			<li><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
-		</ul>
-		<?php endif ?>
 
 	</div>
 </header>

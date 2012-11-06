@@ -161,6 +161,23 @@
 					   description="Customize the generator meta tag output by your template."
 					   size="56"/>
 			</fieldset>
+			<fieldset name="IE">
+				<field name="IECSS3"
+					   type="radio"
+					   default="1"
+					   label="TPL_BOOTSTRUCT_IE_CSS3_LABEL"
+					   description="TPL_BOOTSTRUCT_IE_CSS3_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field name="IECSS3Targets"
+					   type="textarea"
+					   default=".drop-shadow, .outline, .rounded, ul.menu li"
+					   label="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_LABEL"
+					   description="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_DESC"
+					   rows="5"
+					   cols="50"/>
+			</fieldset>
 			<fieldset name="javascript">
 				<field name="loadMoo"
 					   type="radio"
@@ -170,14 +187,13 @@
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
-				<field name="loadModal"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_LOAD_MODAL_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_MODAL_DESC">
-					<option value="1">Yes</option>
-					<option value="0">No</option>
-				</field>
+				<field name="mooExceptions"
+					   type="textarea"
+					   default=""
+					   label="TPL_BOOTSTRUCT_MOO_EXCEPTIONS_LABEL"
+					   description="TPL_BOOTSTRUCT_MOO_EXCEPTIONS_DESC"
+					   rows="1"
+					   cols="30"/>
 			</fieldset>
 			<fieldset name="Layout">
 				<field name="siteWidth"
