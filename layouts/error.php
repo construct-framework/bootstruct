@@ -19,10 +19,6 @@
 	<link rel="icon" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/favicon.png" type="image/png" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/css/screen.css" type="text/css" media="screen" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl . '/templates/' . $this->template ?>/css/print.css" type="text/css" media="print" />
-	<?php if ($enableSwitcher) {
-	echo '  <link rel="alternate stylesheet" href="templates/' . $this->template . '/css/diagnostic.css" type="text/css" title="diagnostic"/>
-  <link rel="alternate stylesheet" href="templates/' . $this->template . '/css/wireframe.css" type="text/css" title="wireframe"/>';
-} ?>
 	<?php
 	if ($customStyleSheet > -1)
 		echo '<link rel="stylesheet" href="' . $this->baseurl . '/templates/' . $this->template . '/css/' . $customStyleSheet . '"  type="text/css" media="screen" />';
@@ -41,10 +37,6 @@
 	if ($googleWebFont3 != "")
 		echo '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' . $googleWebFont3 . '">
 		<style type="text/css">' . $googleWebFontTargets3 . '{font-family:' . $googleWebFont3 . ', serif !important;} </style>';
-	if ($loadjQuery != "")
-		$doc->addScript("http://ajax.googleapis.com/ajax/libs/jquery/'.$loadjQuery.'/jquery.min.js");
-	if ($enableSwitcher)
-		echo '<script type="text/javascript" src="' . $this->baseurl . '/templates/' . $this->template . '/js/styleswitch.js"></script>';
 	if ($siteWidth)
 		echo '<style type="text/css"> #body-container, #header-above {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ' !important}</style>';
 	if ($siteWidth && !$fullWidth)
@@ -111,13 +103,6 @@
 <header id="header" class="clear clearfix">
 	<div class="gutter">
 
-		<div class="date-container">
-			<span class="date-weekday"><?php	$now = JFactory::getDate(); echo $now->toFormat('%A') . ',' ?></span>
-			<span class="date-month"><?php		 $now = JFactory::getDate(); echo $now->toFormat('%B') ?></span>
-			<span class="date-day"><?php		 $now = JFactory::getDate(); echo $now->toFormat('%d') . ',' ?></span>
-			<span class="date-year"><?php		 $now = JFactory::getDate(); echo $now->toFormat('%Y') ?></span>
-		</div>
-
 		<h1 id="logo">
 			<a href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo $this->baseurl ?></a>
 		</h1>
@@ -134,17 +119,6 @@
 				</li>
 			</ul>
 		</nav>
-
-		<?php if ($enableSwitcher) : ?>
-		<ul id="style-switch">
-			<li><a href="#" onclick="setActiveStyleSheet('wireframe'); return false;" title="Wireframe">Wireframe</a>
-			</li>
-			<li>
-				<a href="#" onclick="setActiveStyleSheet('diagnostic'); return false;" title="Diagnostic">Diagnostic Mode</a>
-			</li>
-			<li><a href="#" onclick="setActiveStyleSheet('normal'); return false;" title="Normal">Normal Mode</a></li>
-		</ul>
-		<?php endif ?>
 
 	</div>
 </header>
