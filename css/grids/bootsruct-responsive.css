@@ -51,6 +51,11 @@ footer .gutter {
 	display : block;
 }
 
+.row-fluid .span2-4 {
+  width: 18.297872339%;
+  *width: 18.244680849%;
+}
+
 /* end default styles */
 
 @media only screen and (min-width: 40em /*480px*/) {
