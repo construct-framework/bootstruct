@@ -16,6 +16,10 @@ if (JFile::exists(dirname(__FILE__) . '/helper.php')) {
 $app = JFactory::getApplication();
 // Returns a reference to the global document object
 $doc = JFactory::getDocument();
+// Returns a reference to the global language object
+$lang = JFactory::getLanguage();
+// Returns a reference to the menu object
+$menu = $app->getMenu();
 // Checks for any system messages
 $messageQueue = $app->getMessageQueue();
 // Define relative path to the  current template directory
@@ -29,6 +33,9 @@ $user = JFactory::getUser();
 // Get the current view
 $view = JRequest::getCmd('view');
 
+// The default menu item
+$default = $menu->getActive() == $menu->getDefault($lang->getTag());
+
 // Define shortcuts for template parameters
 $customStyleSheet        = $this->params->get('customStyleSheet');
 $customStyleSheetVersion = htmlspecialchars($this->params->get('customStyleSheetVersion'));
@@ -41,6 +48,8 @@ $googleWebFontTargets2   = htmlspecialchars($this->params->get('googleWebFontTar
 $googleWebFont3          = $this->params->get('googleWebFont3');
 $googleWebFontTargets3   = htmlspecialchars($this->params->get('googleWebFontTargets3'));
 $gridSystem              = $this->params->get('gridSystem');
+$IECSS3                  = $this->params->get('IECSS3');
+$IECSS3Targets           = htmlspecialchars($this->params->get('IECSS3Targets'));
 $inheritLayout           = $this->params->get('inheritLayout');
 $inheritStyle            = $this->params->get('inheritStyle');
 $loadMoo                 = $this->params->get('loadMoo');
@@ -72,16 +81,6 @@ $currentComponent = JRequest::getCmd('option');
 
 // Turn $mooExceptions into an array, remove spaces from input
 $mooExceptions = explode(',', str_replace(' ', '', $mooExceptions));
-
-// Enable Mootols
-if ($loadMoo) {
-	JHtml::_('behavior.framework', TRUE);
-}
-
-// Enable modal pop-ups
-if ($loadMoo && $loadModal) {
-	JHtml::_('behavior.modal');
-}
 
 // Remove MooTools if set to no.
 if (!$loadMoo && !in_array($currentComponent, $mooExceptions)) {
@@ -441,6 +440,7 @@ if ($googleWebFont3) {
 }
 
 // JavaScript
+$doc->addScriptDeclaration('(function($){$().ready(function(){$("html.no-js").removeClass("no-js").addClass("js");});})(jQuery);');
 $doc->addScript('media/jui/js/jquery.js');
 $doc->addScript('media/jui/js/bootstrap.min.js');
 
@@ -462,4 +462,7 @@ if ($useStickyFooter && $stickyFooterHeight != '') {
 // Internet Explorer Fixes
 $doc->addCustomTag('<!--[if lt IE 9]>');
 $doc->addCustomTag('<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>');
+if ($IECSS3) {
+	$doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
+}
 $doc->addCustomTag('<![endif]-->');
