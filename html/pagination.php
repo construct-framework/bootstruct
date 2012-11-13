@@ -95,5 +95,3 @@ function pagination_item_inactive(&$item)
 {
     return "<li>" . $item->text . "</li>";
 }
-
-?>
