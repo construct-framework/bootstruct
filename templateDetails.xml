@@ -16,17 +16,6 @@
         <filename>css/component/index.html</filename>
         <folder>css/grids</folder>
         <filename>css/item/index.html</filename>
-        <filename>css/bootstrap.min.css</filename>
-        <filename>css/construct-dark.css</filename>
-        <filename>css/construct-light.css</filename>
-        <filename>css/diagnostic.css</filename>
-        <filename>css/editor.css</filename>
-        <filename>css/index.html</filename>
-        <filename>css/modal.css</filename>
-        <filename>css/print.css</filename>
-        <filename>css/rtl.css</filename>
-        <filename>css/screen.css</filename>
-        <filename>css/wireframe.css</filename>
         <filename>elements/googlewebfont.php</filename>
         <filename>elements/helper.php</filename>
         <filename>elements/index.html</filename>
@@ -34,16 +23,14 @@
         <filename>elements/version.php</filename>
         <folder>html</folder>
         <filename>images/index.html</filename>
-        <filename>images/selector-arrow.png</filename>
-        <filename>images/trans.gif</filename>
         <filename>js/index.html</filename>
         <filename>js/PIE.htc</filename>
         <folder>language</folder>
-        <filename>layouts/index.html</filename>
         <filename>layouts/article/index.html</filename>
         <filename>layouts/category/index.html</filename>
         <filename>layouts/component/index.html</filename>
         <filename>layouts/item/index.html</filename>
+        <filename>layouts/index.html</filename>
         <filename>apple-touch-icon.png</filename>
         <filename>component.php</filename>
         <filename>error.php</filename>
