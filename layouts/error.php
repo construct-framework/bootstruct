@@ -182,7 +182,7 @@
 				<div class="gutter">
 					<?php if ($contentAboveClass) : ?>
 					<div id="content-above" class="clearfix">
-						<div id="content-above" class="<?php echo $contentAboveClass ?>">
+						<div id="content-above-1" class="<?php echo $contentAboveClass ?>">
 							<?php echo $renderer->render('content-above-1', $jexhtml, null) ?>
 						</div>
 						<div id="content-above-2" class="<?php echo $contentAboveClass ?>">
