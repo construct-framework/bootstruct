@@ -336,20 +336,34 @@ if ($results) {
 
 	<?php if ($columnGroupAlphaCount) : ?>
     <div id="column-group-alpha" class="clearfix row-fluid">
-		<?php if ($this->countModules('column-1')) : ?>
+		<?php if ($this->countModules('top-left')) : ?>
+        <div id="top-left" class="<?php echo $columnGroupAlphaClass ?>">
+            <div class="gutter clearfix">
+                <jdoc:include type="modules" name="top-left" style="div" />
+            </div>
+        </div>							
+    <?php endif; ?>
+    <?php if ($this->countModules('column-1')) : ?>
         <div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
             <div class="gutter clearfix">
                 <jdoc:include type="modules" name="column-1" style="div" />
             </div>
         </div>
-		<?php endif ?>
-		<?php if ($this->countModules('column-2')) : ?>
+    <?php endif ?>
+    <?php if ($this->countModules('column-2')) : ?>
         <div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
             <div class="gutter clearfix">
                 <jdoc:include type="modules" name="column-2" style="div" />
             </div>
         </div>
-		<?php endif ?>
+    <?php endif ?>
+    <?php if ($this->countModules('bottom-left')) : ?>
+        <div id="bottom-left" class="<?php echo $columnGroupAlphaClass ?>">
+            <div class="gutter clearfix">
+                <jdoc:include type="modules" name="bottom-left" style="div" />
+            </div>
+        </div>							
+    <?php endif; ?>
     </div>
 	<?php endif ?>
 
@@ -357,6 +371,13 @@ if ($results) {
 
 	<?php if ($columnGroupBetaCount) : ?>
 <div id="column-group-beta" class="clearfix row-fluid">
+	<?php if ($this->countModules('top-right')) : ?>
+        <div id="top-right" class="<?php echo $columnGroupBetaClass ?>">
+            <div class="gutter clearfix">
+                <jdoc:include type="modules" name="top-right" style="div" />
+            </div>
+        </div>							
+    <?php endif; ?>
 	<?php if ($this->countModules('column-3')) : ?>
     <div id="column-3" class="<?php echo $columnGroupBetaClass ?>">
         <div class="gutter clearfix">
@@ -371,6 +392,13 @@ if ($results) {
         </div>
     </div>
 	<?php endif ?>
+	<?php if ($this->countModules('bottom-right')) : ?>
+        <div id="bottom-right" class="<?php echo $columnGroupBetaClass ?>">
+            <div class="gutter clearfix">
+                <jdoc:include type="modules" name="bottom-right" style="div" />
+            </div>
+        </div>								
+    <?php endif; ?>
 </div>
 	<?php endif ?>
 
