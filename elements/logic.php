@@ -183,24 +183,36 @@ if ($footerAboveCount) : $footerAboveClass = 'span' . strtr((12 / $footerAboveCo
 
 #------------------------------ Column Layout -----------------------------#
 
-$column1Count          = (int)($this->countModules('column-1') > 0);
-$column2Count          = (int)($this->countModules('column-2') > 0);
-$columnGroupAlphaCount = $column1Count + $column2Count;
+$top_left = (int) ($this->countModules('top-left') > 0);
+$column1Count = (int) ($this->countModules('column-1') > 0);
+$column2Count = (int) ($this->countModules('column-2') > 0);
+$bottom_left = (int) ($this->countModules('bottom-left') > 0);
 
-if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'span' . 12 / $columnGroupAlphaCount; endif;
+if ($top_left || $bottom_left) : $columnGroupAlphaCount = 2;
+else : $columnGroupAlphaCount = $column1Count + $column2Count;
+endif;
 
-$column3Count         = (int)($this->countModules('column-3') > 0);
-$column4Count         = (int)($this->countModules('column-4') > 0);
-$columnGroupBetaCount = $column3Count + $column4Count;
+if (($columnGroupAlphaCount == 2) || ($columnGroupAlphaCount == 1)) : $columnGroupAlphaClass = 'count-'.$columnGroupAlphaCount; endif;
 
-if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupBetaCount; endif;
+$top_right = (int) ($this->countModules('top-right') > 0);
+$column3Count = (int) ($this->countModules('column-3') > 0);
+$column4Count = (int) ($this->countModules('column-4') > 0);
+$bottom_right = (int) ($this->countModules('bottom-right') > 0);
 
-$columnLayout = 'main-only';
+if ($top_right || $bottom_right) : $columnGroupBetaCount = 2;
+else : $columnGroupBetaCount = $column3Count + $column4Count;
+endif;
 
-if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main'; elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount; elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'main-beta-' . $columnGroupBetaCount;
+if (($columnGroupBetaCount == 2) || ($columnGroupBetaCount == 1)) : $columnGroupBetaClass = 'count-'.$columnGroupBetaCount; endif;
+
+$columnLayout= 'main-only';
+
+if (($columnGroupAlphaCount > 0 ) && ($columnGroupBetaCount == 0)) :
+    $columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main';
+elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'alpha-'.$columnGroupAlphaCount.'-main-beta-'.$columnGroupBetaCount;
+elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
+	$columnLayout = 'main-beta-'.$columnGroupBetaCount;
 endif;
 
 #-------------------------------- Item ID ---------------------------------#
