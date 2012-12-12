@@ -387,6 +387,21 @@
 				       default=""
 				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
 				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				<field name="googleWebFontSubset"
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_DESC">
+					<option value="">Default</option>
+					<option value="latin">Latin</option>
+					<option value="latin-ext">Latin extended</option>
+					<option value="cirrilic">Cirrilic</option>
+					<option value="cirrilic-ext">Cirrilic extended</option>
+					<option value="greek">Greek</option>
+					<option value="greek-ext">Greek extended</option>
+					<option value="khmer">Khmer</option>
+					<option value="vietnamese">Vietnamese</option>
+				</field>
 				<field name="googleWebFontTargets"
 				       type="text"
 				       default=""
@@ -400,6 +415,21 @@
 				       default=""
 				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
 				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				<field name="googleWebFontSubset2"
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_DESC">
+					<option value="">Default</option>
+					<option value="latin">Latin</option>
+					<option value="latin-ext">Latin extended</option>
+					<option value="cirrilic">Cirrilic</option>
+					<option value="cirrilic-ext">Cirrilic extended</option>
+					<option value="greek">Greek</option>
+					<option value="greek-ext">Greek extended</option>
+					<option value="khmer">Khmer</option>
+					<option value="vietnamese">Vietnamese</option>
+				</field>
 				<field name="googleWebFontTargets2"
 				       type="text"
 				       default=""
@@ -413,6 +443,21 @@
 				       default=""
 				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
 				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				<field name="googleWebFontSubset3"
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_SUBSET_DESC">
+					<option value="">Default</option>
+					<option value="latin">Latin</option>
+					<option value="latin-ext">Latin extended</option>
+					<option value="cirrilic">Cirrilic</option>
+					<option value="cirrilic-ext">Cirrilic extended</option>
+					<option value="greek">Greek</option>
+					<option value="greek-ext">Greek extended</option>
+					<option value="khmer">Khmer</option>
+					<option value="vietnamese">Vietnamese</option>
+				</field>
 				<field name="googleWebFontTargets3"
 				       type="text"
 				       default=""
