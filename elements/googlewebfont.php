@@ -16,37 +16,50 @@
  * @subpackage     HTML
  * @since          1.6
  */
-class JFormFieldGooglewebfont extends JFormFieldList
-{
-	/**
-	 * Field Type
-	 *
-	 * @var        string
-	 * @since    1.6
-	 */
-	public $type = 'Googlewebfont';
+class JFormFieldGooglewebfont extends JFormFieldList {
+    /**
+     * Field Type
+     *
+     * @var        string
+     * @since    1.6
+     */
+    public $type = 'Googlewebfont';
 
-	/**
-	 * getOptions
-	 *
-	 * Generates list options
-	 *
-	 * @return    array    The field option objects.
-	 * @since    1.6
-	 */
-	protected function getOptions()
-	{
-		$link    = 'https://www.googleapis.com/webfonts/v1/webfonts';
-		$json    = @file_get_contents($link);
-		$data    = json_decode($json, true);
-		$items   = $data['items'];
-		$options = array();
+    /**
+     * getOptions
+     *
+     * Generates list options
+     *
+     * @return    array    The field option objects.
+     * @since    1.6
+     */
+    protected function getOptions() {
 
-		$options[] = JHtml::_('select.option', '', '- None Selected -');
-		foreach ($items as $item) {
-			$options[] = JHtml::_('select.option', str_replace(" ", "+", $item['family']), $item['family']);
-		}
+        $obj    = $this->form->getValue('params');
+        $params = new JRegistry();
+        $params->loadObject($obj);
+        $apiKey = $params->get('googlewebfontapikey');
 
-		return $options;
-	}
+        if ($apiKey) {
+            $link = 'https://www.googleapis.com/webfonts/v1/webfonts?key=' . $apiKey;
+        } else {
+            $link = 'https://www.googleapis.com/webfonts/v1/webfonts';
+        }
+
+        $json    = @file_get_contents($link);
+        $data    = json_decode($json, TRUE);
+        $items   = $data['items'];
+        $options = array();
+
+        if ($items) {
+            $options[] = JHtml::_('select.option', '', '- None Selected -');
+            foreach ($items as $item) {
+                $options[] = JHtml::_('select.option', str_replace(" ", "+", $item['family']), $item['family']);
+            }
+        } else {
+            $options[] = JHtml::_('select.option', '', 'Google Web Font API Not Available');
+        }
+
+        return $options;
+    }
 }
