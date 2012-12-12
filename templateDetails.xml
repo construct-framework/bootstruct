@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
-<extension version="2.5" type="template" client="site" method="upgrade">
+<extension version="2.5"
+           type="template"
+           client="site"
+           method="upgrade">
 	<name>bootstruct</name>
 	<creationDate>June 26, 2012</creationDate>
 	<author>Matt Thomas</author>
@@ -115,206 +118,207 @@
 
 	<config>
 		<fields name="params">
-			<fieldset name="general" addfieldpath="/templates/bootstruct/elements">
+			<fieldset name="general"
+			          addfieldpath="/templates/bootstruct/elements">
 				<field name="enableSwitcher"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_ENABLE_SWITCHER_LABEL"
-					   description="TPL_BOOTSTRUCT_ENABLE_SWITCHER_DESC">
+				       type="radio"
+				       default="0"
+				       label="TPL_BOOTSTRUCT_ENABLE_SWITCHER_LABEL"
+				       description="TPL_BOOTSTRUCT_ENABLE_SWITCHER_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
 				<field name="showDiagnostics"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_SHOW_DIAGNOSTICS_LABEL"
-					   description="TPL_BOOTSTRUCT_SHOW_DIAGNOSTICS_DESC">
+				       type="radio"
+				       default="0"
+				       label="TPL_BOOTSTRUCT_SHOW_DIAGNOSTICS_LABEL"
+				       description="TPL_BOOTSTRUCT_SHOW_DIAGNOSTICS_DESC">
 					<option value="1">Show</option>
 					<option value="0">Hide</option>
 				</field>
 				<field name="inheritLayout"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_INHERIT_CAT_LAYOUT_LABEL"
-					   description="TPL_BOOTSTRUCT_INHERIT_CAT_LAYOUT_DESC">
+				       type="radio"
+				       default="0"
+				       label="TPL_BOOTSTRUCT_INHERIT_CAT_LAYOUT_LABEL"
+				       description="TPL_BOOTSTRUCT_INHERIT_CAT_LAYOUT_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="inheritStyle"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_INHERIT_CAT_STYLE_LABEL"
-					   description="TPL_BOOTSTRUCT_INHERIT_CAT_STYLE_DESC">
+				       type="radio"
+				       default="0"
+				       label="TPL_BOOTSTRUCT_INHERIT_CAT_STYLE_LABEL"
+				       description="TPL_BOOTSTRUCT_INHERIT_CAT_STYLE_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="customStyleSheet"
-					   type="filelist"
-					   default=""
-					   label="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_LABEL"
-					   directory="templates/bootstruct/css"
-					   filter="\.css"
-					   exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css|mobile\.css|bootstruct-responsive\.css"
-					   description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_DESC"/>
+				       type="filelist"
+				       default=""
+				       label="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_LABEL"
+				       directory="templates/bootstruct/css"
+				       filter="\.css"
+				       exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css|mobile\.css|bootstruct-responsive\.css"
+				       description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_DESC"/>
 				<field name="customStyleSheetVersion"
-					   type="text"
-					   default=""
-					   label="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_VERSION_LABEL"
-					   description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_VERSION_DESC"/>
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_VERSION_LABEL"
+				       description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_VERSION_DESC"/>
 				<field name="gridSystem"
-					   type="filelist"
-					   default="bootstruct-responsive.css"
-					   label="TPL_BOOTSTRUCT_GRID_SYSTEM_LABEL"
-					   directory="templates/bootstruct/css/grids"
-					   filter="\.css"
-					   description="TPL_BOOTSTRUCT_GRID_SYSTEM_DESC"/>
+				       type="filelist"
+				       default="bootstruct-responsive.css"
+				       label="TPL_BOOTSTRUCT_GRID_SYSTEM_LABEL"
+				       directory="templates/bootstruct/css/grids"
+				       filter="\.css"
+				       description="TPL_BOOTSTRUCT_GRID_SYSTEM_DESC"/>
 				<field name="setGeneratorTag"
-					   type="text"
-					   default="Construct Framework | http://Construct-Framework.com"
-					   label="Generator Meta Tag"
-					   description="Customize the generator meta tag output by your template."
-					   size="56"/>
+				       type="text"
+				       default="Construct Framework | http://Construct-Framework.com"
+				       label="Generator Meta Tag"
+				       description="Customize the generator meta tag output by your template."
+				       size="56"/>
 			</fieldset>
 			<fieldset name="IE">
 				<field name="IECSS3"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_IE_CSS3_LABEL"
-					   description="TPL_BOOTSTRUCT_IE_CSS3_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_IE_CSS3_LABEL"
+				       description="TPL_BOOTSTRUCT_IE_CSS3_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="IECSS3Targets"
-					   type="textarea"
-					   default=".drop-shadow, .outline, .rounded, ul.menu li"
-					   label="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_DESC"
-					   rows="5"
-					   cols="50"/>
+				       type="textarea"
+				       default=".drop-shadow, .outline, .rounded, ul.menu li"
+				       label="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_LABEL"
+				       description="TPL_BOOTSTRUCT_IE_CSS3_TARGETS_DESC"
+				       rows="5"
+				       cols="50"/>
 				<field name="IE6TransFix"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_IE6_TRANS_FIX_LABEL"
-					   description="TPL_BOOTSTRUCT_IE6_TRANS_FIX_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_IE6_TRANS_FIX_LABEL"
+				       description="TPL_BOOTSTRUCT_IE6_TRANS_FIX_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="IE6TransFixTargets"
-					   type="textarea"
-					   default="h1 a"
-					   label="TPL_BOOTSTRUCT_IE6_TRANS_FIX_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_IE6_TRANS_FIX_TARGETS_DESC"
-					   rows="5"
-					   cols="50"/>
+				       type="textarea"
+				       default="h1 a"
+				       label="TPL_BOOTSTRUCT_IE6_TRANS_FIX_TARGETS_LABEL"
+				       description="TPL_BOOTSTRUCT_IE6_TRANS_FIX_TARGETS_DESC"
+				       rows="5"
+				       cols="50"/>
 			</fieldset>
 			<fieldset name="javascript">
 				<field name="loadMoo"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_LOAD_MOO_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_MOO_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_LOAD_MOO_LABEL"
+				       description="TPL_BOOTSTRUCT_LOAD_MOO_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="loadModal"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_LOAD_MODAL_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_MODAL_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_LOAD_MODAL_LABEL"
+				       description="TPL_BOOTSTRUCT_LOAD_MODAL_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="loadjQuery"
-					   type="jqueryversion"
-					   default=""
-					   label="TPL_BOOTSTRUCT_LOAD_JQUERY_LABEL"
-					   description="TPL_BOOTSTRUCT_LOAD_JQUERY_DESC"/>
+				       type="jqueryversion"
+				       default=""
+				       label="TPL_BOOTSTRUCT_LOAD_JQUERY_LABEL"
+				       description="TPL_BOOTSTRUCT_LOAD_JQUERY_DESC"/>
 			</fieldset>
 			<fieldset name="Layout">
 				<field name="siteWidth"
-					   type="text"
-					   default=""
-					   label="TPL_BOOTSTRUCT_SITE_WIDTH_LABEL"
-					   description="TPL_BOOTSTRUCT_SITE_WIDTH_DESC"
-					   size="10"/>
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_SITE_WIDTH_LABEL"
+				       description="TPL_BOOTSTRUCT_SITE_WIDTH_DESC"
+				       size="10"/>
 				<field name="siteWidthType"
-					   type="radio"
-					   default="max-width"
-					   label="TPL_BOOTSTRUCT_SITE_WIDTH_TYPE_LABEL"
-					   description="TPL_BOOTSTRUCT_SITE_WIDTH_TYPE_DESC">
+				       type="radio"
+				       default="max-width"
+				       label="TPL_BOOTSTRUCT_SITE_WIDTH_TYPE_LABEL"
+				       description="TPL_BOOTSTRUCT_SITE_WIDTH_TYPE_DESC">
 					<option value="max-width">Fluid Max Width</option>
 					<option value="width">Fixed Width</option>
 				</field>
 				<field name="siteWidthUnit"
-					   type="radio"
-					   default="em"
-					   label="TPL_BOOTSTRUCT_SITE_WIDTH_UNIT_LABEL"
-					   description="TPL_BOOTSTRUCT_SITE_WIDTH_UNIT_DESC">
+				       type="radio"
+				       default="em"
+				       label="TPL_BOOTSTRUCT_SITE_WIDTH_UNIT_LABEL"
+				       description="TPL_BOOTSTRUCT_SITE_WIDTH_UNIT_DESC">
 					<option value="em">Em</option>
 					<option value="px">Pixel</option>
 					<option value="%">Percent</option>
 				</field>
 				<field name="fluidMedia"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_FLUID_MEDIA_LABEL"
-					   description="TPL_BOOTSTRUCT_FLUID_MEDIA_DESC">
+				       type="radio"
+				       default="0"
+				       label="TPL_BOOTSTRUCT_FLUID_MEDIA_LABEL"
+				       description="TPL_BOOTSTRUCT_FLUID_MEDIA_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="fullWidth"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_FULL_WIDTH_LABEL"
-					   description="TPL_BOOTSTRUCT_FULL_WIDTH_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_FULL_WIDTH_LABEL"
+				       description="TPL_BOOTSTRUCT_FULL_WIDTH_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="useStickyFooter"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_USE_STICKY_FOOTER_LABEL"
-					   description="TPL_BOOTSTRUCT_USE_STICKY_FOOTER_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_USE_STICKY_FOOTER_LABEL"
+				       description="TPL_BOOTSTRUCT_USE_STICKY_FOOTER_DESC">
 					<option value="1">On</option>
 					<option value="0">Off</option>
 				</field>
 				<field name="stickyFooterHeight"
-					   type="text"
-					   default=""
-					   label="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_LABEL"
-					   description="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_DESC"
-					   size="5"/>
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_LABEL"
+				       description="TPL_BOOTSTRUCT_STICKY_FOOTER_HEIGHT_DESC"
+				       size="5"/>
 			</fieldset>
 			<fieldset name="mobile">
 				<field name="mdetect"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_MDETECT_LABEL"
-					   description="TPL_BOOTSTRUCT_MDETECT_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_MDETECT_LABEL"
+				       description="TPL_BOOTSTRUCT_MDETECT_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="detectTablets"
-					   type="radio"
-					   default="1"
-					   label="TPL_BOOTSTRUCT_DETECT_TABLETS_LABEL"
-					   description="TPL_BOOTSTRUCT_DETECT_TABLETS_DESC">
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_DETECT_TABLETS_LABEL"
+				       description="TPL_BOOTSTRUCT_DETECT_TABLETS_DESC">
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
 				<field name="mNavPosition"
-					   type="radio"
-					   default="0"
-					   label="TPL_BOOTSTRUCT_MNAVPOSITION_LABEL"
-					   description="TPL_BOOTSTRUCT_MNAVPOSITION_DESC">
+				       type="radio"
+				       default="0"
+				       label="TPL_BOOTSTRUCT_MNAVPOSITION_LABEL"
+				       description="TPL_BOOTSTRUCT_MNAVPOSITION_DESC">
 					<option value="1">Before Content</option>
 					<option value="0">After Content</option>
 				</field>
 				<field name="mPageDataTheme"
-					   type="list"
-					   default="b"
-					   label="TPL_BOOTSTRUCT_MPAGEDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MPAGEDATATHEME_DESC">
+				       type="list"
+				       default="b"
+				       label="TPL_BOOTSTRUCT_MPAGEDATATHEME_LABEL"
+				       description="TPL_BOOTSTRUCT_MPAGEDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
 					<option value="b">Blue</option>
@@ -323,10 +327,10 @@
 					<option value="e">Accent</option>
 				</field>
 				<field name="mHeaderDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MHEADERDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MHEADERDATATHEME_DESC">
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_MHEADERDATATHEME_LABEL"
+				       description="TPL_BOOTSTRUCT_MHEADERDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
 					<option value="b">Blue</option>
@@ -335,10 +339,10 @@
 					<option value="e">Accent</option>
 				</field>
 				<field name="mNavDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MNAVDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MNAVDATATHEME_DESC">
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_MNAVDATATHEME_LABEL"
+				       description="TPL_BOOTSTRUCT_MNAVDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
 					<option value="b">Blue</option>
@@ -347,10 +351,10 @@
 					<option value="e">Accent</option>
 				</field>
 				<field name="mContentDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MCONTENTDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MCONTENTDATATHEME_DESC">
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_MCONTENTDATATHEME_LABEL"
+				       description="TPL_BOOTSTRUCT_MCONTENTDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
 					<option value="b">Blue</option>
@@ -359,10 +363,10 @@
 					<option value="e">Accent</option>
 				</field>
 				<field name="mFooterDataTheme"
-					   type="list"
-					   default=""
-					   label="TPL_BOOTSTRUCT_MFOOTERDATATHEME_LABEL"
-					   description="TPL_BOOTSTRUCT_MFOOTERDATATHEME_DESC">
+				       type="list"
+				       default=""
+				       label="TPL_BOOTSTRUCT_MFOOTERDATATHEME_LABEL"
+				       description="TPL_BOOTSTRUCT_MFOOTERDATATHEME_DESC">
 					<option value="">- None Selected -</option>
 					<option value="a">Black</option>
 					<option value="b">Blue</option>
@@ -372,44 +376,53 @@
 				</field>
 			</fieldset>
 			<fieldset name="typography">
+				<field name="googlewebfontapikey"
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_API_KEY_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_API_KEY_DESC"
+				       size="50"/>
 				<field name="googleWebFont"
-					   type="googlewebfont"
-					   default=""
-					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
-					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				       type="googlewebfont"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
 				<field name="googleWebFontTargets"
-					   type="text"
-					   default=""
-					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_DESC"
-					   size="50"/>
-				<field type="spacer" default=" "/>
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_DESC"
+				       size="50"/>
+				<field type="spacer"
+				       default=" "/>
 				<field name="googleWebFont2"
-					   type="googlewebfont"
-					   default=""
-					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
-					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				       type="googlewebfont"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
 				<field name="googleWebFontTargets2"
-					   type="text"
-					   default=""
-					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_DESC"
-					   size="50"/>
-				<field type="spacer" default=" "/>
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_DESC"
+				       size="50"/>
+				<field type="spacer"
+				       default=" "/>
 				<field name="googleWebFont3"
-					   type="googlewebfont"
-					   default=""
-					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
-					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
+				       type="googlewebfont"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_DESC"/>
 				<field name="googleWebFontTargets3"
-					   type="text"
-					   default=""
-					   label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
-					   description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_DESC"
-					   size="50"/>
+				       type="text"
+				       default=""
+				       label="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_LABEL"
+				       description="TPL_BOOTSTRUCT_GOOGLE_WEB_FONT_TARGETS_DESC"
+				       size="50"/>
 			</fieldset>
 			<fieldset name="version_check">
-				<field label="TPL_BOOTSTRUCT_VERSION_CHECK_LABEL" type="version"/>
+				<field label="TPL_BOOTSTRUCT_VERSION_CHECK_LABEL"
+				       type="version"/>
 			</fieldset>
 		</fields>
 	</config>
