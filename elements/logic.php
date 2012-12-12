@@ -445,7 +445,7 @@ if ($googleWebFont) {
 if ($googleWebFont2) {
     $googleWebFont2 = 'http://fonts.googleapis.com/css?family=' . $googleWebFont2;
     if ($googleWebFontSubset) {
-        $googleWebFont2 = $googleWebFont2 . '&subset=' . $googleWebFontSubset;
+        $googleWebFont2 = $googleWebFont2 . '&subset=' . $googleWebFontSubset2;
     }
     $doc->addStyleSheet($googleWebFont2);
     $doc->addStyleDeclaration($googleWebFontTargets2 . ' {font-family:' . $googleWebFontFamily2 . ', serif;}');
@@ -453,7 +453,7 @@ if ($googleWebFont2) {
 if ($googleWebFont3) {
     $googleWebFont3 = 'http://fonts.googleapis.com/css?family=' . $googleWebFont3;
     if ($googleWebFontSubset) {
-        $googleWebFont3 = $googleWebFont3 . '&subset=' . $googleWebFontSubset;
+        $googleWebFont3 = $googleWebFont3 . '&subset=' . $googleWebFontSubset3;
     }
     $doc->addStyleSheet($googleWebFont3);
     $doc->addStyleDeclaration($googleWebFontTargets3 . ' {font-family:' . $googleWebFontFamily3 . ', serif;}');
