@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/**
+ * File       
+ * Created    2/13/13 9:14 PM 
+ * Author     Matt Thomas
+ * Website    http://betweenbrain.com
+ * Email      matt@betweenbrain.com
+ * Support    https://github.com/betweenbrain/
+ * Copyright  Copyright (C) 2013 betweenbrain llc. All Rights Reserved.
+ * License    GNU GPL v3 or later
+ */
+
+body {
+	padding-top    : 60px;
+	padding-bottom : 40px;
+}
+
+.gutter {
+	margin : 10px;
+}
+
+header .gutter {
+	margin-top : 0;
+}
+
+footer .gutter {
+	margin-bottom : 0;
+}
+
+#column-group-alpha .gutter {
+	margin : 0 10px 0 0;
+}
+
+#column-group-beta .gutter {
+	margin : 0 0 0 10px;
+}
+
+.navbar .btn-navbar {
+	display : block;
+}
+
+#primary-nav .brand {
+	display : none;
+}
+
+@media (min-width: 1200px) {
+	.row-fluid [class*="span"] {
+		margin-left : 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar {
+		display : none;
+	}
+
+	#primary-nav {
+		display  : block;
+		position : absolute;
+		top      : 0;
+		right    : 0;
+		width    : 100%;
+	}
+
+	#primary-nav .container {
+		width : 1170px;
+	}
+
+	#primary-nav .navbar-inner {
+		position : relative;
+	}
+
+	#primary-nav .brand {
+		display  : block;
+		position : absolute;
+		left     : 20px;
+		top      : 0;
+	}
+}
+
+@media (max-width: 979px) {
+	body {
+		padding-top : 0;
+	}
+
+	.navbar .btn-navbar {
+		display : block;
+	}
+}
+
+
