@@ -183,25 +183,41 @@ if ($footerAboveCount) : $footerAboveClass = 'span' . strtr((12 / $footerAboveCo
 
 #------------------------------ Column Layout -----------------------------#
 
-$column1Count          = (int)($this->countModules('column-1') > 0);
-$column2Count          = (int)($this->countModules('column-2') > 0);
+$column1Count          = (int) ($this->countModules('column-1') > 0);
+$column2Count          = (int) ($this->countModules('column-2') > 0);
 $columnGroupAlphaCount = $column1Count + $column2Count;
 
 if ($columnGroupAlphaCount) : $columnGroupAlphaClass = 'span' . 12 / $columnGroupAlphaCount; endif;
 
-$column3Count         = (int)($this->countModules('column-3') > 0);
-$column4Count         = (int)($this->countModules('column-4') > 0);
+$column3Count         = (int) ($this->countModules('column-3') > 0);
+$column4Count         = (int) ($this->countModules('column-4') > 0);
 $columnGroupBetaCount = $column3Count + $column4Count;
 
 if ($columnGroupBetaCount) : $columnGroupBetaClass = 'span' . 12 / $columnGroupBetaCount; endif;
 
-$columnLayout = 'main-only';
+if ($columnGroupAlphaCount == 1) {
+	$mainSpan       = '9';
+	$alphaSpan      = '3';
+	$groupAlphaSpan = '12';
+} elseif ($columnGroupAlphaCount == 2) {
+	$mainSpan       = '6';
+	$alphaSpan      = '6';
+	$groupAlphaSpan = '6';
+} else {
+	$mainSpan = '12';
+}
 
-if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main'; elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount; elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
-    $columnLayout = 'main-beta-' . $columnGroupBetaCount;
-endif;
+if ($columnGroupBetaCount == 1) {
+	$firstSpan     = '10';
+	$betaSpan      = '2';
+	$groupBetaSpan = '12';
+} elseif ($columnGroupBetaCount == 2) {
+	$firstSpan     = '8';
+	$betaSpan      = '4';
+	$groupBetaSpan = '6';
+} else {
+	$firstSpan = '12';
+}
 
 #-------------------------------- Item ID ---------------------------------#
 
@@ -211,7 +227,7 @@ $itemId = JRequest::getInt('Itemid', 0);
 
 if ($view == 'article')
     $articleId = JRequest::getInt('id');
-else ($articleId = null);
+else ($articleId = NULL);
 
 #------------------------------- Section ID -------------------------------#
 
@@ -219,7 +235,7 @@ function getSection($id)
 {
     $database = JFactory::getDBO();
     if ((substr(JVERSION, 0, 3) >= '1.6')) {
-        return null;
+        return NULL;
     } elseif (JRequest::getCmd('view', 0) == "section") {
         return $id;
     } elseif (JRequest::getCmd('view', 0) == "category") {
@@ -244,7 +260,7 @@ function getCategory($id)
 {
     $database = JFactory::getDBO();
     if (JRequest::getCmd('view', 0) == "section") {
-        return null;
+        return NULL;
     } elseif ((JRequest::getCmd('view', 0) == "category") || (JRequest::getCmd('view', 0) == "categories")) {
         return $id;
     } elseif (JRequest::getCmd('view', 0) == "article") {
@@ -402,8 +418,6 @@ $mobileLayoutOverride->includeFile[] = $template . '/layouts/mobile.php';
 
 #---------------------------- Head Elements --------------------------------#
 
-// Custom tags
-
 // Always force latest IE rendering engine (even in intranet) & Chrome Frame
 $doc->setMetadata('X-UA-Compatible', 'IE=edge,chrome=1');
 // Set initial scale of mobile viewport to 100% - see http://bit.ly/sK7Zty
@@ -415,9 +429,11 @@ $doc->setMetadata('copyright', htmlspecialchars($app->getCfg('sitename')));
 $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
 $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-icon');
 
-// Style sheets
-$doc->addStyleSheet('media/jui/css/bootstrap.min.css', 'text/css', 'screen');
-//$doc->addStyleSheet($template . '/css/screen.css?' . $version, 'text/css', 'screen');
+// Load core Bootstrap CSS and Bootstrap bugfixes
+JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
+// Load additonal Bootsruct core CSS
+$doc->addStyleSheet($template . '/css/template.css?' . $version, 'text/css', 'screen');
+
 if ($gridSystem != '-1') {
     $doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
