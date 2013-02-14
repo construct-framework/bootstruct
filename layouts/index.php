@@ -17,27 +17,25 @@
     <jdoc:include type="head" />
 </head>
 
-<body id="page-top" class="<?php echo $columnLayout; if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; ?>">
+<body id="page-top" class="<?php if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; ?>">
 
 <div id="footer-push">
 
 <?php if ($this->countModules('nav')) : ?>
 <div class="navbar">
-    <div class="navbar-inner">
-        <div class="container">
+	<div class="navbar-inner">
+		<div class="container">
             <a type="button" class="btn btn-navbar" href="<?php $url->setFragment('nav'); echo $url->toString() ?>"
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             </a>
-
             <a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
-
         </div>
     </div>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
 <?php if ($headerAboveCount) : ?>
 <div id="header-above" class="clearfix row-fluid">
@@ -77,7 +75,7 @@
     </div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
 <header id="header" class="clear clearfix">
     <div class="gutter clearfix">
@@ -135,7 +133,7 @@
     </div>
 </header>
 
-<section id="body-container">
+<section id="body-container" class="container  row-fluid">
 
 <?php if ($headerBelowCount) : ?>
 <div id="header-below" class="clearfix row-fluid">
@@ -175,11 +173,11 @@
     </div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
 <?php if ($this->countModules('breadcrumbs')) : ?>
 <jdoc:include type="module" name="breadcrumbs" />
-	<?php endif ?>
+<?php endif ?>
 
 <div id="content-container" class="clear clearfix">
 
@@ -221,12 +219,12 @@
     </div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
-<div id="load-first" class="clearfix">
+<div id="load-first" class="clearfix span<?php echo $firstSpan ?>">
     <a id="content" name="content"></a>
 
-    <div id="content-main">
+    <div id="content-main" class="span<?php echo $mainSpan ?> pull-right">
         <div class="gutter">
 
 			<?php if ($contentAboveCount) : ?>
@@ -319,16 +317,16 @@
     </div>
 
 	<?php if ($columnGroupAlphaCount) : ?>
-    <div id="column-group-alpha" class="clearfix row-fluid">
+    <div id="column-group-alpha" class="clearfix span<?php echo $alphaSpan ?>">
 		<?php if ($this->countModules('column-1')) : ?>
-        <div id="column-1" class="<?php echo $columnGroupAlphaClass ?>">
+        <div id="column-1" class="span<?php echo $groupAlphaSpan ?>">
             <div class="gutter clearfix">
                 <jdoc:include type="modules" name="column-1" style="div" />
             </div>
         </div>
 		<?php endif ?>
 		<?php if ($this->countModules('column-2')) : ?>
-        <div id="column-2" class="<?php echo $columnGroupAlphaClass ?>">
+        <div id="column-2" class="span<?php echo $groupAlphaSpan ?>">
             <div class="gutter clearfix">
                 <jdoc:include type="modules" name="column-2" style="div" />
             </div>
@@ -340,23 +338,25 @@
 </div>
 
 <?php if ($columnGroupBetaCount) : ?>
-<div id="column-group-beta" class="clearfix row-fluid">
+<div id="column-group-beta" class="clearfix span<?php echo $betaSpan ?>">
 	<?php if ($this->countModules('column-3')) : ?>
-    <div id="column-3" class="<?php echo $columnGroupBetaClass ?>">
+    <div id="column-3" class="span<?php echo $groupBetaSpan ?>">
         <div class="gutter clearfix">
             <jdoc:include type="modules" name="column-3" style="div" />
         </div>
     </div>
 	<?php endif ?>
 	<?php if ($this->countModules('column-4')) : ?>
-    <div id="column-4" class="<?php echo $columnGroupBetaClass ?>">
+    <div id="column-4" class="span<?php echo $groupBetaSpan ?>">
         <div class="gutter clearfix">
             <jdoc:include type="modules" name="column-4" style="div" />
         </div>
     </div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
+
+</div>
 
 <?php if ($this->countModules('nav')) : ?>
 <div class="navbar" id="primary-nav">
@@ -365,10 +365,11 @@
             <nav id="nav" class="clear clearfix">
                 <jdoc:include type="modules" name="nav" style="raw" />
             </nav>
+	        <a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
         </div>
     </div>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
 
 <?php if ($footerAboveCount) : ?>
@@ -409,7 +410,7 @@
     </div>
 	<?php endif ?>
 </div>
-	<?php endif ?>
+<?php endif ?>
 
 </div>
 </section>
@@ -435,11 +436,11 @@
 
 <?php if ($this->countModules('debug')) : ?>
 <jdoc:include type="modules" name="debug" style="raw" />
-	<?php endif ?>
+<?php endif ?>
 
 <?php if ($this->countModules('analytics')) : ?>
 <jdoc:include type="modules" name="analytics" />
-	<?php endif ?>
+<?php endif ?>
 
 </body>
 </html>
