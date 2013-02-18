@@ -477,8 +477,8 @@ if ($googleWebFont3) {
 
 // JavaScript
 $doc->addScriptDeclaration('(function($){$().ready(function(){$("html.no-js").removeClass("no-js").addClass("js");});})(jQuery);');
-$doc->addScript('media/jui/js/jquery.js');
-$doc->addScript('media/jui/js/bootstrap.min.js');
+// Load JUI jQuery and Bootstrap JS, including jQuery noConflict
+JHtml::_('bootstrap.framework');
 
 // Layout Declarations
 if ($siteWidth) {
