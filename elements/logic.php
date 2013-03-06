@@ -479,12 +479,12 @@ if ($googleWebFont3) {
 $doc->addScriptDeclaration('(function($){$().ready(function(){$("html.no-js").removeClass("no-js").addClass("js");});})(jQuery);');
 // Load JUI jQuery and Bootstrap JS, including jQuery noConflict
 JHtml::_('bootstrap.framework');
-// Exmaple to load additional jQuery UI plugins - http://docs.joomla.org/Javascript_Frameworks#JQuery_UI_Framework
+// Example to load additional jQuery UI plugins - http://docs.joomla.org/Javascript_Frameworks#JQuery_UI_Framework
 //JHtml::_('jquery.ui', array('core', 'sortable'));
 
 // Layout Declarations
 if ($siteWidth) {
-    $doc->addStyleDeclaration('#body-container, #header-above {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ';}');
+    $doc->addStyleDeclaration('#body-container, #header-above, #primary-nav .container {' . $siteWidthType . ':' . $siteWidth . $siteWidthUnit . ';}');
 }
 if (($siteWidthType == 'max-width') && $fluidMedia) {
     $doc->addStyleDeclaration('img, object {max-width:100%;}');
