@@ -479,6 +479,8 @@ if ($googleWebFont3) {
 $doc->addScriptDeclaration('(function($){$().ready(function(){$("html.no-js").removeClass("no-js").addClass("js");});})(jQuery);');
 // Load JUI jQuery and Bootstrap JS, including jQuery noConflict
 JHtml::_('bootstrap.framework');
+// Exmaple to load additional jQuery UI plugins - http://docs.joomla.org/Javascript_Frameworks#JQuery_UI_Framework
+//JHtml::_('jquery.ui', array('core', 'sortable'));
 
 // Layout Declarations
 if ($siteWidth) {
