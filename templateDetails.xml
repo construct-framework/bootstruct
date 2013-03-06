@@ -131,7 +131,7 @@
 				       label="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_LABEL"
 				       directory="templates/bootstruct/css"
 				       filter="\.css"
-				       exclude="core-classes-ids\.css|diagnostic\.css|editor\.css|modal\.css|normal\.css|print\.css|rtl\.css|screen\.css|ie6\.css|wireframe\.css|mobile\.css|mobile\.css|bootstruct-responsive\.css"
+				       exclude=""
 				       description="TPL_BOOTSTRUCT_CUSTOM_STYLE_SHEET_DESC"/>
 				<field name="customStyleSheetVersion"
 				       type="text"
