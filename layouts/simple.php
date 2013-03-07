@@ -9,34 +9,30 @@
 
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
-<!--[if IE 9]>    <html class="no-js ie9 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
-<!--[if IE 10]>   <html class="no-js ie10" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
-<!--[if gt IE 10]> <!--> <html class="no-js" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js ie6 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie7 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie8 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
+<!--[if IE 9]>
+<html class="no-js ie9 oldie" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
+<!--[if IE 10]>
+<html class="no-js ie10" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <![endif]-->
+<!--[if gt IE 10]> <!-->
+<html class="no-js" lang="<?php echo substr($this->language, 0, 2) ?>" dir="<?php echo $this->direction ?>"> <!--<![endif]-->
 <head>
-<jdoc:include type="head" />
+	<jdoc:include type="head" />
 </head>
 
-<body id="page-top" class="<?php if ($useStickyFooter) {
-	echo ' sticky-footer';
-} echo ' ' . $currentComponent; if ($articleId) {
-	echo ' article-' . $articleId;
-} if ($itemId) {
-	echo ' item-' . $itemId;
-} if ($catId) {
-	echo ' category-' . $catId;
-} if ($default) {
-	echo ' default';
-} ?>">
+<body id="page-top" class="<?php if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; ?>">
 
 <div id="footer-push">
 	<?php if ($this->countModules('nav')) : ?>
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container">
-				<a type="button" class="btn btn-navbar" href="<?php $url->setFragment('nav'); echo $url->toString() ?>"
+				<a type="button" class="btn btn-navbar" href="<?php $url->setFragment('nav'); echo $url->toString() ?>">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -116,17 +112,16 @@
 
 		<?php if ($this->countModules('nav')) : ?>
 		<div class="navbar" id="primary-nav">
-		    <div class="navbar-inner">
-		        <div class="container-fluid">
-			        <a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
-		            <nav id="nav" class="clear clearfix">
-		                <jdoc:include type="modules" name="nav" style="raw" />
-		            </nav>
-		        </div>
-		    </div>
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
+					<nav id="nav" class="clear clearfix">
+						<jdoc:include type="modules" name="nav" style="raw" />
+					</nav>
+				</div>
+			</div>
 		</div>
 		<?php endif ?>
-</div>
 </section>
 </div>
 
@@ -141,7 +136,7 @@
 
 <?php if ($this->countModules('analytics')) : ?>
 <jdoc:include type="modules" name="analytics" />
-<?php endif ?>
+	<?php endif ?>
 
 </body>
 </html>
