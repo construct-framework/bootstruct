@@ -363,11 +363,11 @@
 <?php if ($this->countModules('nav')) : ?>
 <div class="navbar" id="primary-nav">
     <div class="navbar-inner">
-        <div class="container">
+        <div class="container-fluid">
+	        <a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
             <nav id="nav" class="clear clearfix">
                 <jdoc:include type="modules" name="nav" style="raw" />
             </nav>
-	        <a class="brand" href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
         </div>
     </div>
 </div>
