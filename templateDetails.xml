@@ -1,39 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
-<extension version="2.5"
-           type="template"
-           client="site"
-           method="upgrade">
+<extension version="3.0" type="template" client="site" method="upgrade">
 	<name>bootstruct</name>
-	<creationDate>Nov 2, 2012</creationDate>
+	<creationDate>March 8, 2013</creationDate>
 	<author>Matt Thomas</author>
 	<authorEmail>support@construct-framework.com</authorEmail>
 	<authorUrl>http://construct-framework.com</authorUrl>
 	<copyright>Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>3.0.0</version>
+	<version>3.0.1</version>
 	<description>TPL_BOOTSTRUCT_DESCRIPTION</description>
 	<files>
-		<filename>css/article/index.html</filename>
-		<filename>css/category/index.html</filename>
-		<filename>css/component/index.html</filename>
-		<folder>css/grids</folder>
-		<filename>css/item/index.html</filename>
-		<filename>elements/googlewebfont.php</filename>
-		<filename>elements/helper.php</filename>
-		<filename>elements/index.html</filename>
-		<filename>elements/logic.php</filename>
-		<filename>elements/version.php</filename>
+		<folder>css</folder>
+		<folder>elements</folder>
 		<folder>html</folder>
-		<filename>images/index.html</filename>
-		<filename>js/index.html</filename>
-		<filename>js/PIE.htc</filename>
+		<folder>images</folder>
+		<folder>js</folder>
 		<folder>language</folder>
-		<filename>layouts/article/index.html</filename>
-		<filename>layouts/category/index.html</filename>
-		<filename>layouts/component/index.html</filename>
-		<filename>layouts/item/index.html</filename>
-		<filename>layouts/index.html</filename>
+		<folder>layouts</folder>
 		<filename>apple-touch-icon.png</filename>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
@@ -338,4 +321,3 @@
 		</fields>
 	</config>
 </extension>
-
