@@ -431,8 +431,8 @@ $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-
 
 // Load core Bootstrap CSS and Bootstrap bugfixes
 JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
-// Load additonal Bootsruct core CSS
-$doc->addStyleSheet($template . '/css/template.css?' . $version, 'text/css', 'screen');
+// Load additonal Bootstruct core CSS
+$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
 
 if ($gridSystem != '-1') {
     $doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
