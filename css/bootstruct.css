@@ -41,7 +41,7 @@ footer .gutter {
 	margin : 0 0 0 10px;
 }
 
-#load-first [class*="span"]:nth-child(-n+3).pull-left {
+#column-group-alpha {
 	margin-left : 0;
 }
 
@@ -51,10 +51,6 @@ footer .gutter {
 
 #primary-nav .brand {
 	display : none;
-}
-
-.pull-left {
-	float : left;
 }
 
 .row-fluid .span2-4 {
