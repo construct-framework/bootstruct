@@ -41,6 +41,10 @@ footer .gutter {
 	margin : 0 0 0 10px;
 }
 
+#load-first [class*="span"]:nth-child(-n+3).pull-left {
+	margin-left : 0;
+}
+
 .navbar .btn-navbar {
 	display : block;
 }
@@ -49,18 +53,14 @@ footer .gutter {
 	display : none;
 }
 
+.pull-left {
+	float : left;
+}
+
 .row-fluid .span2-4 {
 	width  : 17.948717949%;
 	*width : 17.948717949%;
 }
-
-/*
-@media (min-width: 1200px) {
-	.row-fluid [class*="span"] {
-		margin-left : 0;
-	}
-}
-*/
 
 @media (min-width: 768px) {
 	.navbar {
