@@ -222,7 +222,7 @@
 		</div>
 		<?php endif ?>
 
-		<div id="load-first" class="clearfix span<?php echo $firstSpan ?>">
+		<div id="load-first" class="clearfix row-fluid span<?php echo $firstSpan ?>">
 		    <a id="content" name="content"></a>
 
 		    <div id="content-main" class="span<?php echo $mainSpan ?> pull-right">
