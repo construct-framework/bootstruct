@@ -28,6 +28,11 @@ footer .gutter {
 	margin-bottom : 0;
 }
 
+#header-above {
+	margin  : 0 auto;
+	padding : 0;
+}
+
 #column-group-alpha .gutter {
 	margin : 0 10px 0 0;
 }
