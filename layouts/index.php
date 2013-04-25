@@ -19,7 +19,7 @@
 <jdoc:include type="head" />
 </head>
 
-<body id="page-top" class="<?php if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; ?>">
+<body id="page-top" class="<?php echo $currentComponent;  if ($useStickyFooter) echo ' sticky-footer'; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; ?>">
 
 <div id="footer-push">
 
