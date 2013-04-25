@@ -294,6 +294,11 @@ if ($itemId) {
 
 $currentComponent = $jinput->get('option');
 
+#------------------------------- Page Class -------------------------------#
+
+$pageClass = $menu->getParams($itemId)->get('pageclass_sfx');
+
+
 #------------------Extended Template Style Overrides------------------------#
 
 $styleOverride = new ConstructTemplateHelper ();
