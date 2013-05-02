@@ -28,12 +28,21 @@ footer .gutter {
 	margin-bottom : 0;
 }
 
+#header-above {
+	margin  : 0 auto;
+	padding : 0;
+}
+
 #column-group-alpha .gutter {
 	margin : 0 10px 0 0;
 }
 
 #column-group-beta .gutter {
 	margin : 0 0 0 10px;
+}
+
+#column-group-alpha {
+	margin-left : 0;
 }
 
 .navbar .btn-navbar {
@@ -45,14 +54,8 @@ footer .gutter {
 }
 
 .row-fluid .span2-4 {
-	width  : 18.297872339%;
-	*width : 18.244680849%;
-}
-
-@media (min-width: 1200px) {
-	.row-fluid [class*="span"] {
-		margin-left : 0;
-	}
+	width  : 17.948717949%;
+	*width : 17.948717949%;
 }
 
 @media (min-width: 768px) {

@@ -19,7 +19,8 @@
 <jdoc:include type="head" />
 </head>
 
-<body id="page-top" class="<?php if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; ?>">
+<body id="page-top" class="<?php echo $currentComponent;  if ($useStickyFooter) echo ' sticky-footer'; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($default) echo ' default'; if($pageClass) echo ' ' . $pageClass ?>">
+
 
 <div id="footer-push">
 
@@ -222,7 +223,7 @@
 		</div>
 		<?php endif ?>
 
-		<div id="load-first" class="clearfix span<?php echo $firstSpan ?>">
+		<div id="load-first" class="clearfix row-fluid span<?php echo $firstSpan ?>">
 		    <a id="content" name="content"></a>
 
 		    <div id="content-main" class="span<?php echo $mainSpan ?> pull-right">

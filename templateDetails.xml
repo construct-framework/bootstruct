@@ -108,6 +108,14 @@
 					<option value="1">Yes</option>
 					<option value="0">No</option>
 				</field>
+				<field name="loadJui"
+				       type="radio"
+				       default="1"
+				       label="TPL_BOOTSTRUCT_LOAD_JUI_LABEL"
+				       description="TPL_BOOTSTRUCT_LOAD_JUI_DESC">
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
 				<field name="customStyleSheet"
 				       type="filelist"
 				       default=""
