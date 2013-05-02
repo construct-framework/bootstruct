@@ -82,6 +82,9 @@ if ($customStyleSheetVersion == '') {
 // Change generator tag
 $this->setGenerator($setGeneratorTag);
 
+// Current component Name
+$currentComponent = $jinput->get('option');
+
 // Turn $mooExceptions into an array, remove spaces from input
 $mooExceptions = explode(',', str_replace(' ', '', $mooExceptions));
 
@@ -289,10 +292,6 @@ if ($catId && ($inheritStyle || $inheritLayout)) {
 if ($itemId) {
 	$currentAlias = $app->getMenu()->getActive()->alias;
 }
-
-#----------------------------- Component Name -----------------------------#
-
-$currentComponent = $jinput->get('option');
 
 #------------------------------- Page Class -------------------------------#
 
