@@ -93,5 +93,5 @@ function pagination_item_active(&$item)
 
 function pagination_item_inactive(&$item)
 {
-    return "<li>" . $item->text . "</li>";
+    return "<li><span>" . $item->text . "</span></li>";
 }
