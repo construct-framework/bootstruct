@@ -11,21 +11,8 @@
  * License    GNU GPL v3 or later
  */
 
-body {
-	padding-top    : 60px;
-	padding-bottom : 40px;
-}
-
-.gutter {
-	margin : 10px;
-}
-
-header .gutter {
-	margin-top : 0;
-}
-
-footer .gutter {
-	margin-bottom : 0;
+#column-group-alpha {
+	margin-left : 0;
 }
 
 #header-above {
@@ -33,63 +20,36 @@ footer .gutter {
 	padding : 0;
 }
 
-#column-group-alpha .gutter {
-	margin : 0 10px 0 0;
-}
-
-#column-group-beta .gutter {
-	margin : 0 0 0 10px;
-}
-
-#column-group-alpha {
-	margin-left : 0;
-}
-
-.navbar .btn-navbar {
-	display : block;
-}
-
-#primary-nav .brand {
-	display : none;
-}
-
 .row-fluid .span2-4 {
 	width  : 17.948717949%;
 	*width : 17.948717949%;
 }
 
-@media (min-width: 768px) {
-	.navbar {
-		display : none;
-	}
+/* =============================================================================
+   Sticky Footer- http://www.cssstickyfooter.com/
+   ========================================================================== */
 
-	#primary-nav {
-		display  : block;
-		position : absolute;
-		top      : 0;
-		right    : 0;
-		width    : 100%;
-	}
-
-	#primary-nav .container {
-		width : 1170px;
-	}
-
-	#primary-nav .navbar-inner {
-		position : relative;
-	}
-
-	#primary-nav .brand {
-		display : block;
-	}
+html,
+.sticky-footer {
+	height : 100%;
 }
 
-@media (max-width: 979px) {
-	body {
-		padding-top : 0;
-	}
+.sticky-footer #footer-push {
+	min-height : 100%;
+}
 
-	.navbar .btn-navbar {
-		display : block;
-	}
+.sticky-footer #footer {
+	position : relative;
+	clear    : both;
+}
+
+/*
+ * Opera Fix
+ */
+.sticky-footer:before {
+	content    : "";
+	height     : 100%;
+	float      : left;
+	width      : 0;
+	margin-top : -32767px;
 }
