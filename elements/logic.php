@@ -410,8 +410,8 @@ $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
 $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-icon');
 
 if ($loadJui) {
-// Load core Bootstrap CSS and Bootstrap bugfixes
-	JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
+// Load core Bootstrap CSS and Bootstrap bugfixes using class loader method. See http://docs.joomla.org/JHtml::_/11.1
+	JHtml::_('bootstrap.loadCss');
 // Load additonal Bootstruct core CSS
 	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
 }
