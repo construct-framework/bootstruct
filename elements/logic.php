@@ -416,7 +416,7 @@ if ($loadJui) {
 	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
 }
 
-if ($gridSystem > '-1') {
+if ($gridSystem > -1) {
 	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
 if ($customStyleSheet > -1) {
