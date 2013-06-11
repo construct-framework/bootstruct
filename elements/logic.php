@@ -411,7 +411,7 @@ $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-
 
 if ($loadJui) {
 // Load core Bootstrap CSS and Bootstrap bugfixes using class loader method. See http://docs.joomla.org/JHtml::_/11.1
-	JHtml::_('bootstrap.loadCss');
+	JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
 // Load additonal Bootstruct core CSS
 	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
 }
