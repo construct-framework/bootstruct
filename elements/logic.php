@@ -3,7 +3,7 @@
  * @package        Template Framework for Joomla!+
  * @author         Cristina Solana http://nightshiftcreative.com
  * @author         Matt Thomas http://construct-framework.com | http://betweenbrain.com
- * @copyright      Copyright (C) 2009 - 2012 Matt Thomas. All rights reserved.
+ * @copyright      Copyright (C) 2009 - 2013 Matt Thomas. All rights reserved.
  * @license        GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -410,13 +410,13 @@ $doc->addFavicon($template . '/favicon.png', 'image/png', 'shortcut icon');
 $doc->addFavicon($template . '/apple-touch-icon.png', 'image/png', 'apple-touch-icon');
 
 if ($loadJui) {
-// Load core Bootstrap CSS and Bootstrap bugfixes
+// Load core Bootstrap CSS and Bootstrap bugfixes using class loader method. See http://docs.joomla.org/JHtml::_/11.1
 	JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
 // Load additonal Bootstruct core CSS
 	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
 }
 
-if ($gridSystem != '-1') {
+if ($gridSystem > -1) {
 	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
 if ($customStyleSheet > -1) {
