@@ -67,6 +67,9 @@
   <style type="text/css">.sticky-footer #footer-push {display:table;height:100%}</style>
   <![endif]-->';
 } ?>
+<!--[if lte IE 8]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
 	<?php if ($IECSS3) {
 	echo '  <!--[if !IE 9]>
   <style type="text/css">' . $IECSS3Targets . '"{behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc)</style>
