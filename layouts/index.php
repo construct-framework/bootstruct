@@ -116,9 +116,6 @@ if ($pageClass) {
 				<?php if ($itemId) {
 					echo '<li>menu item ' . $itemId . '</li>';
 				} ?>
-				<?php if ($sectionId) {
-					echo '<li>section ' . $sectionId . '</li>';
-				} ?>
 				<?php if ($catId) {
 					echo '<li>category ' . $catId . '</li>';
 				} ?>

@@ -53,7 +53,7 @@ else {
     <jdoc:include type="head" />
 </head>
 
-<body id="page-top" class="<?php echo $columnLayout; if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; if ($sectionId) echo ' section-' . $sectionId ?>">
+<body id="page-top" class="<?php echo $columnLayout; if ($useStickyFooter) echo ' sticky-footer'; echo ' ' . $currentComponent; if ($articleId) echo ' article-' . $articleId; if ($itemId) echo ' item-' . $itemId; if ($catId) echo ' category-' . $catId; ?>">
 
 <div id="footer-push">
 
@@ -109,7 +109,6 @@ else {
             <?php if ($view) echo '<li>' . $view . ' view</li>' ?>
             <?php if ($articleId) echo '<li>article ' . $articleId . '</li>' ?>
             <?php if ($itemId) echo '<li>menu item ' . $itemId . '</li>' ?>
-            <?php if ($sectionId) echo '<li>section ' . $sectionId . '</li>' ?>
             <?php if ($catId) echo '<li>category ' . $catId . '</li>' ?>
             <?php if ($catId && ($inheritStyle || $inheritLayout)) {
             if ($parentCategory) {
