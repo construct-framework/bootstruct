@@ -315,9 +315,7 @@ if ($results) {
 						</div>
 					<?php endif ?>
 
-					<?php if (!empty($messageQueue)) : ?>
-						<jdoc:include type="message" />
-					<?php endif ?>
+					<jdoc:include type="message" />
 
 					<jdoc:include type="component" />
 
