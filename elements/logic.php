@@ -411,7 +411,7 @@ if ($gridSystem > -1) {
 	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
 }
 if ($customStyleSheet > -1) {
-	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion, 'text/css');
 }
 if ($this->direction == 'rtl') {
 	$doc->addStyleSheet($template . '/css/rtl.css?' . $version, 'text/css', 'screen');
