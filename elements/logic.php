@@ -404,22 +404,22 @@ if ($loadJui) {
 // Load core Bootstrap CSS and Bootstrap bugfixes using class loader method. See http://docs.joomla.org/JHtml::_/11.1
 	JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
 // Load additonal Bootstruct core CSS
-	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version);
 }
 
 if ($gridSystem > -1) {
-	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version);
 }
 if ($customStyleSheet > -1) {
-	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion, 'text/css');
+	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion);
 }
 if ($this->direction == 'rtl') {
-	$doc->addStyleSheet($template . '/css/rtl.css?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/rtl.css?' . $version);
 }
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile();
 if ($cssFile) {
-	$doc->addStyleSheet($cssFile . '?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($cssFile . '?' . $version);
 }
 
 // Typography
