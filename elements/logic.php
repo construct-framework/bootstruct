@@ -224,12 +224,12 @@ if ($columnGroupBetaCount == 1) {
 
 #-------------------------------- Item ID ---------------------------------#
 
-$itemId = $jinput->get('Itemid', 0);
+$itemId = $jinput->get('Itemid');
 
 #------------------------------- Article ID -------------------------------#
 
 if ($view == 'article') {
-	$articleId = $jinput->get('id');
+	$articleId = $jinput->get('id', '', 'INT');
 } else {
 	($articleId = NULL);
 }
@@ -240,18 +240,17 @@ function getCategory($id) {
 	$app      = JFactory::getApplication();
 	$database = JFactory::getDBO();
 	$jinput   = $app->input;
-	if (($jinput->get('view', 0) == "category") || ($jinput->get('view', 0) == "categories")) {
+	if (($jinput->get('view') == "category") || ($jinput->get('view') == "categories")) {
 		return $id;
-	} elseif ($jinput->get('view', 0) == "article") {
-		$temp = explode(":", $id);
-		$sql  = "SELECT catid FROM #__content WHERE id = " . $temp[0];
+	} elseif ($jinput->get('view') == "article") {
+		$sql  = "SELECT catid FROM #__content WHERE id = " . $id;
 		$database->setQuery($sql);
 
 		return $database->loadResult();
 	}
 }
 
-$catId = getCategory($jinput->get('id'));
+$catId = getCategory($jinput->get('id', '', 'INT'));
 
 #------------------------- Ancestor Category IDs --------------------------#
 
