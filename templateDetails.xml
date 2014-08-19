@@ -4,13 +4,13 @@
            client="site"
            method="upgrade">
 	<name>bootstruct</name>
-	<creationDate>November 17, 2013</creationDate>
+	<creationDate>August 19, 2014</creationDate>
 	<author>Matt Thomas</author>
 	<authorEmail>support@construct-framework.com</authorEmail>
 	<authorUrl>http://construct-framework.com</authorUrl>
-	<copyright>Copyright (C) 2009 - 2013 Matt Thomas. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2009 - 2014 Matt Thomas. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<version>3.0.4</version>
+	<version>3.0.5</version>
 	<description>TPL_BOOTSTRUCT_DESCRIPTION</description>
 	<files>
 		<filename>css/article/index.html</filename>

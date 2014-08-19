@@ -3,7 +3,7 @@
  * @package        Template Framework for Joomla!+
  * @author         Cristina Solana http://nightshiftcreative.com
  * @author         Matt Thomas http://construct-framework.com | http://betweenbrain.com
- * @copyright      Copyright (C) 2009 - 2013 Matt Thomas. All rights reserved.
+ * @copyright      Copyright (C) 2009 - 2014 Matt Thomas. All rights reserved.
  * @license        GNU/GPL v2 or later http://www.gnu.org/licenses/gpl-2.0.html
  */
 
@@ -224,12 +224,12 @@ if ($columnGroupBetaCount == 1) {
 
 #-------------------------------- Item ID ---------------------------------#
 
-$itemId = $jinput->get('Itemid', 0);
+$itemId = $jinput->get('Itemid');
 
 #------------------------------- Article ID -------------------------------#
 
 if ($view == 'article') {
-	$articleId = $jinput->get('id');
+	$articleId = $jinput->get('id', '', 'INT');
 } else {
 	($articleId = NULL);
 }
@@ -240,18 +240,17 @@ function getCategory($id) {
 	$app      = JFactory::getApplication();
 	$database = JFactory::getDBO();
 	$jinput   = $app->input;
-	if (($jinput->get('view', 0) == "category") || ($jinput->get('view', 0) == "categories")) {
+	if (($jinput->get('view') == "category") || ($jinput->get('view') == "categories")) {
 		return $id;
-	} elseif ($jinput->get('view', 0) == "article") {
-		$temp = explode(":", $id);
-		$sql  = "SELECT catid FROM #__content WHERE id = " . $temp[0];
+	} elseif ($jinput->get('view') == "article") {
+		$sql  = "SELECT catid FROM #__content WHERE id = " . $id;
 		$database->setQuery($sql);
 
 		return $database->loadResult();
 	}
 }
 
-$catId = getCategory($jinput->get('id'));
+$catId = getCategory($jinput->get('id', '', 'INT'));
 
 #------------------------- Ancestor Category IDs --------------------------#
 
@@ -404,22 +403,22 @@ if ($loadJui) {
 // Load core Bootstrap CSS and Bootstrap bugfixes using class loader method. See http://docs.joomla.org/JHtml::_/11.1
 	JHtmlBootstrap::loadCss($includeMaincss = TRUE, $this->direction);
 // Load additonal Bootstruct core CSS
-	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/bootstruct.css?' . $version);
 }
 
 if ($gridSystem > -1) {
-	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/grids/' . $gridSystem . '?' . $version);
 }
 if ($customStyleSheet > -1) {
-	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/' . $customStyleSheet . '?' . $customStyleSheetVersion);
 }
 if ($this->direction == 'rtl') {
-	$doc->addStyleSheet($template . '/css/rtl.css?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($template . '/css/rtl.css?' . $version);
 }
 // Override style sheet returned from our template helper
 $cssFile = $styleOverride->getIncludeFile();
 if ($cssFile) {
-	$doc->addStyleSheet($cssFile . '?' . $version, 'text/css', 'screen');
+	$doc->addStyleSheet($cssFile . '?' . $version);
 }
 
 // Typography
