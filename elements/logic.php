@@ -95,6 +95,11 @@ if (!$loadMoo && !in_array($currentComponent, $mooExceptions)) {
 	unset($doc->_scripts[$this->baseurl . '/media/system/js/core.js']);
 	unset($doc->_scripts[$this->baseurl . '/media/system/js/caption.js']);
 	unset($doc->_scripts[$this->baseurl . '/media/system/js/modal.js']);
+
+	if (isset($doc->_script['text/javascript']))
+	{
+		$doc->_script['text/javascript'] = preg_replace("/jQuery\(window\).on\('load',  function\(\) {\n\s*new JCaption\('img.caption'\);\n\s*}\);/", '', $doc->_script['text/javascript']);
+	}
 }
 
 // Change Google Web Font name for CSS
