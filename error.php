@@ -152,13 +152,19 @@ if (JFile::exists($template . '/layouts/error.php')) {
 </div>
 	<?php endif ?>
 
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="<?php echo $this->baseurl; ?>"><?php echo htmlspecialchars($app->getCfg('sitename')) ?></a>
+				<div class="nav-collapse collapse">
+					<?php echo $renderer->render('nav', $raw, null) ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
 <header id="header" class="clear clearfix">
 	<div class="gutter">
-
-		<h1 id="logo">
-			<a href="<?php echo $this->baseurl ?>/" title="<?php echo htmlspecialchars($app->getCfg('sitename')) ?>"><?php echo $this->baseurl ?></a>
-		</h1>
-
 		<?php echo $renderer->render('header', $jexhtml, null) ?>
 
 		<nav>
@@ -198,10 +204,6 @@ if (JFile::exists($template . '/layouts/error.php')) {
 	<?php endif ?>
 
 	<?php echo $renderer->render('breadcrumbs', $raw, null) ?>
-
-	<nav id="nav" class="clear">
-		<?php echo $renderer->render('nav', $raw, null) ?>
-	</nav>
 
 	<div id="content-container" class="clear clearfix">
 		<?php if ($navBelowClass) : ?>
