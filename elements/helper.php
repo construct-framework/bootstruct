@@ -74,4 +74,25 @@ class ConstructTemplateHelper
         // not found
         RETURN false;
     }
+    
+	/**
+	* Replace javascript frameworks or own scripts with versions from Cdn's
+	* renames an array key, only if it exists, keeping the order
+	* $array is the js array from the document object
+	* $url_oldjs = the original path
+	* $url_newjs = the path to a Cdn
+	*
+	* returns the changed array
+	*/
+	public static function replaceUrljs($array, $url_oldjs, $url_newjs)
+	{
+	    $keys = array_keys($array);
+	    $index = array_search($url_oldjs, $keys);
+
+ 	   if ($index !== false) {
+ 	       $keys[$index] = $url_newjs;
+  	      $array = array_combine($keys, $array);
+  	  }
+ 	   return $array;
+	}    
 }
