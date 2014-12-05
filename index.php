@@ -269,7 +269,8 @@ if ($results) {
 			</div>
 		<?php endif ?>
 
-		<div id="load-first" class="clearfix span<?php echo $firstSpan ?> row-fluid">
+		<div class="row-fluid">
+			<div id="load-first" class="clearfix span<?php echo $firstSpan ?>">
 			<a id="content" name="content"></a>
 
 			<div id="content-main" class="span<?php echo $mainSpan ?> pull-right">
