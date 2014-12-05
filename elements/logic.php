@@ -227,6 +227,13 @@ if ($columnGroupBetaCount == 1) {
 	$firstSpan = '12';
 }
 
+$columnLayout = 'main-only';
+if (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount == 0)) :
+    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main'; elseif (($columnGroupAlphaCount > 0) && ($columnGroupBetaCount > 0)) :
+    $columnLayout = 'alpha-' . $columnGroupAlphaCount . '-main-beta-' . $columnGroupBetaCount; elseif (($columnGroupAlphaCount == 0) && ($columnGroupBetaCount > 0)) :
+    $columnLayout = 'main-beta-' . $columnGroupBetaCount;
+endif;
+
 #-------------------------------- Item ID ---------------------------------#
 
 $itemId = $jinput->get('Itemid');
