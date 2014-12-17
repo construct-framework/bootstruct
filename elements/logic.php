@@ -358,7 +358,10 @@ $layoutOverride->includeFile = array();
 
 $layoutOverride->includeFile[] = $template . '/layouts/article/' . $overrideTheme . '-article-' . $articleId . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/article/article-' . $articleId . '.php';
-$layoutOverride->includeFile[] = $template . '/layouts/article/article.php';
+if ($view == 'article')
+{
+	$layoutOverride->includeFile[] = $template . '/layouts/article/article.php';
+}
 $layoutOverride->includeFile[] = $template . '/layouts/item/' . $overrideTheme . '-item-' . $itemId . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/item/item-' . $itemId . '.php';
 $layoutOverride->includeFile[] = $template . '/layouts/category/' . $overrideTheme . '-category-' . $catId . '.php';
