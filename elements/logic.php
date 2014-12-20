@@ -486,7 +486,7 @@ if ($useStickyFooter && $stickyFooterHeight != '') {
 
 // Internet Explorer Fixes
 $doc->addCustomTag('<!--[if lt IE 9]>');
-$doc->addCustomTag('<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>');
+$doc->addCustomTag('<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>');
 if ($IECSS3) {
 	$doc->addCustomTag('<style type="text/css">' . $IECSS3Targets . ' {behavior:url("' . $this->baseurl . '/templates/' . $this->template . '/js/PIE.htc")}</style>');
 }
